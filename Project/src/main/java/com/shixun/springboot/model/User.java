@@ -1,15 +1,23 @@
 package com.shixun.springboot.model;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable{
 
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5399490153823821767L;
 	private String u_name;
 	private String u_password;
 	private int u_age;
 	private String u_phone;
 	private String u_teacherId;
 	private String u_post;//职位
-	public User(String u_name, String u_password, int u_age, String u_phone, String u_teacherId, String u_post) {
+	private int u_count;
+	private int u_limit;
+	public User(String u_name, String u_password, int u_age, String u_phone, String u_teacherId, String u_post,int u_count) {
 		super();
 		this.u_name = u_name;
 		this.u_password = u_password;
@@ -17,7 +25,13 @@ public class User {
 		this.u_phone = u_phone;
 		this.u_teacherId = u_teacherId;
 		this.u_post = u_post;
+		this.u_count = u_count;
 	}
+	
+	public User() {
+		super();
+	}
+
 	public String getU_name() {
 		return u_name;
 	}
@@ -54,11 +68,30 @@ public class User {
 	public void setU_post(String u_post) {
 		this.u_post = u_post;
 	}
+	
+	public int getU_count() {
+		return u_count;
+	}
+
+	public void setU_count(int u_count) {
+		this.u_count = u_count;
+	}
+	
+
+	public int getU_limit() {
+		return u_limit;
+	}
+
+	public void setU_limit(int u_limit) {
+		this.u_limit = u_limit;
+	}
+
 	@Override
 	public String toString() {
 		return "User [u_name=" + u_name + ", u_password=" + u_password + ", u_age=" + u_age + ", u_phone=" + u_phone
-				+ ", u_teacherId=" + u_teacherId + ", u_post=" + u_post + "]";
+				+ ", u_teacherId=" + u_teacherId + ", u_post=" + u_post + ", u_count=" + u_count + ", u_limit="
+				+ u_limit + "]";
 	}
-	
-	
+
+
 }

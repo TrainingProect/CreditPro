@@ -18,7 +18,9 @@
     <select id="findUser" parameterType="String" resultType="com.shixun.springboot.model.User">
         SELECT U_TEACHERID,U_NAME,U_PASSWORD,U_AGE,U_PHONE,U_POST FROM U_TEACHER WHERE U_TEACHERID=#{0}
     </select>
-    
+    <select id="findAll" resultType="com.shixun.springboot.model.User">
+    	SELECT * FROM U_TEACHER
+    </select>
     <!-- delete user -->
     <delete id="delete" parameterType="String">
         DELETE FROM U_TEACHER WHERE U_TEACHERID=#{0}

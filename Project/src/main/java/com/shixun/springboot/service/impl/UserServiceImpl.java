@@ -1,41 +1,30 @@
 package com.shixun.springboot.service.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
 
-import com.shixun.springboot.mapper.UserMapper;
+import com.shixun.springboot.dao.UserDao;
+import com.shixun.springboot.dao.impl.UserDaoImpl;
 import com.shixun.springboot.model.User;
 import com.shixun.springboot.service.UserService;
 
-@ComponentScan({"com.shixun.springboot.mapper"})
+@ComponentScan({"com.shixun.springboot.dao"})
 @Service("userService")
 public class UserServiceImpl implements UserService{
 	
-	@Resource(name="userMapper")
-	UserMapper userMapper;
 	
+	UserDao userDao = new UserDaoImpl();
 
 	@Override
-	public void insert(User user) {
-		userMapper.insert(user);
+	public boolean change(User user , Object...objects) {
+		return userDao.change(user,objects);
 	}
 
-	@Override
-	public void delete(String u_teacherId) {
-		userMapper.delete(u_teacherId);
-	}
 
-	@Override
-	public User findUser(String u_teacherId) {
-		return userMapper.findUser(u_teacherId);
-	}
-
-	@Override
-	public void change(User user) {
-		userMapper.change(user);
-	}
 
 }

@@ -1,6 +1,8 @@
 package com.shixun.springboot.web.controller.user;
 
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.mybatis.spring.annotation.MapperScan;
@@ -13,7 +15,7 @@ import com.shixun.springboot.service.UserService;
 
 
 @ComponentScan({"com.shixun.springboot.service"})
-@MapperScan("com.shixun.springboot.mapper")
+@MapperScan("com.shixun.springboot.dao")
 @RestController
 public class UserController {
 
@@ -22,8 +24,8 @@ public class UserController {
     
 
 	@RequestMapping("/user")  
-    public User findUser(){ 
-        return userService.findUser("wang");
+    public boolean change(User user,Object...objects){ 
+        return userService.change(user,objects);
     }
    
    

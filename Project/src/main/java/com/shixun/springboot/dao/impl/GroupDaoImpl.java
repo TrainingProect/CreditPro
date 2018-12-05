@@ -22,11 +22,6 @@ public class GroupDaoImpl implements GroupDao {
 		}
 	}
 
-	@Override
-	public boolean addData(Group group) {
-		String sql = "insert into u_group(g_name,g_leader,g_members,g_expain,g_class,g_membersNumber,g_count) values(?,?,?,?,?,?,?);";
-		boolean isTrue = DAOConnection.dbDMLWithSQL(sql, group.getG_name(),group.getG_leader(),group.getG_members(),group.getG_explain(),group.getG_class(),group.getG_membersNumber(),group.getG_count());
-		return isTrue;
-	}
+
 
 }

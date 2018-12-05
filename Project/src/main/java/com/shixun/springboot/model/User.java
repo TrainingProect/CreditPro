@@ -14,7 +14,7 @@ public class User implements Serializable{
 	private int u_age;
 	private String u_phone;
 	private String u_teacherId;
-	private String u_post;//职位
+	private String u_post;//学院
 	private int u_count;
 	private int u_limit;
 	public User(String u_name, String u_password, int u_age, String u_phone, String u_teacherId, String u_post,int u_count) {
@@ -88,7 +88,7 @@ public class User implements Serializable{
 
 	@Override
 	public String toString() {
-		return "User [u_name=" + u_name + ", u_password=" + u_password + ", u_age=" + u_age + ", u_phone=" + u_phone
+		return "User [u_name=" + u_name + ", u_age=" + u_age + ", u_phone=" + u_phone
 				+ ", u_teacherId=" + u_teacherId + ", u_post=" + u_post + ", u_count=" + u_count + ", u_limit="
 				+ u_limit + "]";
 	}

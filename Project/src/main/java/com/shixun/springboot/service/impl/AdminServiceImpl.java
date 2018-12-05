@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.shixun.springboot.dao.AdminDao;
 import com.shixun.springboot.dao.impl.AdminDaoImpl;
+import com.shixun.springboot.model.Admin;
 import com.shixun.springboot.model.User;
 import com.shixun.springboot.service.AdminService;
 
@@ -12,13 +13,13 @@ public class AdminServiceImpl implements AdminService {
 	AdminDao adminDao = new AdminDaoImpl();
 
 	@Override
-	public User findUser(String u_teacherId) {
-		return 	adminDao.findUser(u_teacherId);
+	public User findUser(String u_teacherId,String u_post) {
+		return 	adminDao.findUser(u_teacherId,u_post);
 	}
 
 	@Override
-	public List<User> findUser() {
-		return adminDao.findUser();
+	public List<User> findUsers(User user) {
+		return adminDao.findUsers(user);
 	}
 
 	@Override
@@ -27,13 +28,13 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public boolean delete(String u_teacherId) {
-		return adminDao.delete(u_teacherId);
+	public boolean delete(User user) {
+		return adminDao.delete(user);
 	}
 
 	@Override
-	public boolean change(String u_teacherId, String u_password) {
-		return adminDao.change(u_teacherId, u_password);
+	public boolean change(User user, String u_password) {
+		return adminDao.change(user, u_password);
 	}
 
 }

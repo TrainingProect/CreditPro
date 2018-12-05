@@ -2,6 +2,8 @@ package com.shixun.springboot.model;
 
 import java.io.Serializable;
 
+import com.mysql.fabric.xmlrpc.base.Data;
+
 public class Group implements Serializable{
 
 	/**
@@ -15,11 +17,14 @@ public class Group implements Serializable{
 	private String g_class;
 	private int g_membersNumber;
 	private int g_count;
+	private String g_leaderId;
+	private Data data;
 	public Group() {
 		super();
 	}
+	
 	public Group(String g_name, String g_leader, String g_members, String g_explain, String g_class,
-			int g_membersNumber, int g_count) {
+			int g_membersNumber, int g_count,String g_leaderId) {
 		super();
 		this.g_name = g_name;
 		this.g_leader = g_leader;
@@ -28,6 +33,7 @@ public class Group implements Serializable{
 		this.g_class = g_class;
 		this.g_membersNumber = g_membersNumber;
 		this.g_count = g_count;
+		this.g_leaderId = g_leaderId;
 	}
 	public String getG_name() {
 		return g_name;
@@ -74,12 +80,23 @@ public class Group implements Serializable{
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+	
+	public String getG_leaderId() {
+		return g_leaderId;
+	}
+
+	public void setG_leaderId(String g_leaderId) {
+		this.g_leaderId = g_leaderId;
+	}
+
 	@Override
 	public String toString() {
 		return "Group [g_name=" + g_name + ", g_leader=" + g_leader + ", g_members=" + g_members + ", g_explain="
 				+ g_explain + ", g_class=" + g_class + ", g_membersNumber=" + g_membersNumber + ", g_count=" + g_count
-				+ "]";
+				+ ", g_leaderId=" + g_leaderId + "]";
 	}
+
+
 	
 	
 	

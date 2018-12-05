@@ -11,8 +11,8 @@ import com.shixun.springboot.utils.DAOConnection;
 public class UserDaoImpl implements UserDao {
 
 	@Override
-	public boolean change(User user , Object...objects) {//只能修改4项
-		String sql = "update u_teacher set u_name=?,u_age=?,u_phone=?,u_post=? where u_teacherId=?;";
+	public boolean change(User user , Object...objects) {//只能修改3项
+		String sql = "update u_teacher set u_name=?,u_age=?,u_phone=? where u_teacherId=?;";
 //		boolean isTrue = DAOConnection.dbDMLWithSQL(sql,u_password,u_teacherId);
 		Object[] objects2 = new Object[objects.length+1];
 		for(int i=0;i<objects.length;i++) {
@@ -24,8 +24,19 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-	public void personal(User user) {
-		System.out.println(user.toString());
+	public User personal(String u_teacherId) {
+		String sql = "select * from u_teacher where u_teacherId=?;";
+		List<User> users = DAOConnection.dbDQLWithSQL(sql, User.class, u_teacherId);
+		User user = users.get(0);
+		return user;
+	}
+
+	@Override
+	public boolean changePWD(User user, String u_password) {
+		String sql = "update u_teacher set u_password=? where u_teacherId=?;";
+		boolean isTrue = DAOConnection.dbDMLWithSQL(sql,u_password,user.getU_teacherId());
+		return isTrue;
+
 	}
 
 

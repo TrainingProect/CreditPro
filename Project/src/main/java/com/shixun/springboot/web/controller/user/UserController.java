@@ -22,11 +22,18 @@ public class UserController {
 	@Resource(name="userService")
     private UserService userService;
     
-
+	
 	@RequestMapping("/user")  
     public boolean change(User user,Object...objects){ 
         return userService.change(user,objects);
     }
+	
+	@RequestMapping("/user")
+	public User searchUser(String u_teacherId) {
+		
+		User user = userService.personal(u_teacherId);
+		return user;
+	}
    
    
 }

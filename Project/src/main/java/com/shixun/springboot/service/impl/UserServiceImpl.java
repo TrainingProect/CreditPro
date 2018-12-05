@@ -25,6 +25,11 @@ public class UserServiceImpl implements UserService{
 		return userDao.change(user,objects);
 	}
 
+	@Override
+	public User personal(String u_teacherId) {
+		return userDao.personal(u_teacherId);
+	}
+
 
 
 }

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+  
+<!-- 指定工作空间，要与接口名相同，源代码没有去看，猜测应该是通过"这里的namespace.下边方法的id"来定位方法的 -->  
+<mapper namespace="com.shixun.springboot.mapper">  
+
+    <!-- insert user -->
+    <insert id = "insert" parameterType="com.shixun.springboot.model.User">
+        INSERT INTO U_TEACHER(U_NAME,U_PASSWORD,U_AGE,U_PHONE,U_TEACHERID,U_POST) VALUES(#{u_name},#{u_password},#{u_age},#{u_phone},#{u_teacherId},#{u_post});
+    </insert>
+    
+    <!-- update user -->
+    <update id="change" parameterType="com.shixun.springboot.model.User">
+        UPDATE U_TEACHER SET U_NAME=#{u_name} , U_PASSWORD=#{u_password} , U_AGE = #{u_age}, U_PHONE = #{u_phone}, U_TEACHERID = #{u_teacherId}, U_POST = #{u_post} WHERE U_TEACHERID=#{u_teacherId}
+    </update>
+    
+    <!-- find user -->
+    <select id="findUser" parameterType="String" resultType="com.shixun.springboot.model.User">
+        SELECT U_TEACHERID,U_NAME,U_PASSWORD,U_AGE,U_PHONE,U_POST FROM U_TEACHER WHERE U_TEACHERID=#{0}
+    </select>
+    <select id="findAll" resultType="com.shixun.springboot.model.User">
+    	SELECT * FROM U_TEACHER
+    </select>
+    <!-- delete user -->
+    <delete id="delete" parameterType="String">
+        DELETE FROM U_TEACHER WHERE U_TEACHERID=#{0}
+    </delete>
+</mapper>

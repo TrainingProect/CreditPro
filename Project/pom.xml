@@ -118,9 +118,14 @@
       <artifactId>spring-boot-devtools</artifactId>
       <optional>true</optional> <!-- 这个需要为 true 热部署才有效 -->
     </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.45</version>
+        </dependency>
 
 
-	</dependencies>
+    </dependencies>
 
 	<build>
 	<finalName>Project</finalName> 

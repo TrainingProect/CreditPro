@@ -7,18 +7,18 @@ import com.mysql.fabric.xmlrpc.base.Data;
 public class Group implements Serializable{
 
 	/**
-	 * 
+	 * g_name,g_leader,g_leaderId,g_members,g_membersNumber,g_explain,g_class,g_count,data
 	 */
 	private static final long serialVersionUID = 1384764682815006003L;
-	private String g_name;
-	private String g_leader;
-	private String g_members;
-	private String g_explain;
-	private String g_class;
-	private int g_membersNumber;
-	private int g_count;
-	private String g_leaderId;
-	private Data data;
+	private String g_name;       //项目名称
+	private String g_leader;    //项目组长
+	private String g_members;    //项目成员
+	private String g_explain;    //项目解释
+	private String g_class;     //项目类别
+	private int g_membersNumber;  //项目成员数量
+	private int g_count;      //项目绩点
+	private String g_leaderId;   //组长学工号
+	private Data data;      //?
 	public Group() {
 		super();
 	}

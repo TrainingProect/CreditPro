@@ -1,7 +1,5 @@
 package com.shixun.springboot.service.impl;
 
-import com.shixun.springboot.dao.GroupDao;
-import com.shixun.springboot.dao.impl.GroupDaoImpl;
 import com.shixun.springboot.model.Group;
 import com.shixun.springboot.service.GroupService;
 

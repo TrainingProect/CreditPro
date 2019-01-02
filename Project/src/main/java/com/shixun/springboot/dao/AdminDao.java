@@ -35,5 +35,6 @@ public interface AdminDao extends UserDao{
 	public boolean alterData(User user,Group group,Object...objects);  //修改小组数据
 
 	/*public boolean messagePush(User user);  //消息推送*/
+	/*public a_reviewPersonal();   //人工审核*/
 	
 }

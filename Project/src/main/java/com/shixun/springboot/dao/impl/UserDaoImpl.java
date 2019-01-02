@@ -10,6 +10,9 @@ import com.shixun.springboot.dao.UserDao;
 import com.shixun.springboot.model.User;
 import com.shixun.springboot.utils.DAOConnection;
 @Repository
+/*
+* 未完成功能
+* 'addData、applyData、gradeDis、message*/
 public class UserDaoImpl  implements UserDao {
 
 	@Override
@@ -65,5 +68,5 @@ public class UserDaoImpl  implements UserDao {
 		return false;
 	}
 
-
+    /*public message*/
 }

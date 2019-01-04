@@ -25,23 +25,22 @@ public class AdminDaoImpl extends UserDaoImpl implements AdminDao , UserDao {
 	}
 
 	@Override
-	public List<User> findUsers(User user) {
+	public List<User> findUsers(String u_post) {
 		//显示所属学院的全部教师名称
 		String sql = "select * from u_teacher where u_post = ?";
-		List<User> users = DAOConnection.dbDQLWithSQL(sql, User.class,user.getU_post());
+		List<User> users = DAOConnection.dbDQLWithSQL(sql, User.class,u_post);
 		return users;
 	}
 
 	@Override
-			public boolean insert(User user) {
-				int limit = user.getU_limit();
-				if(limit==1) {  //是否为管理员
+	public boolean insert(User user) {
+		int limit = user.getU_limit();
+		if(limit==1) {  //是否为管理员
 			String sql = "insert into u_teacher(u_name,u_password,u_age,u_phone,u_teacherId,u_post) values(?,?,?,?,?,?);";
-			boolean isTrue = DAOConnection.dbDMLWithSQL(sql, user.getU_name(),user.getU_password(),user.getU_age(),user.getU_phone(),user.getU_teacherId(),user.getU_post());
-			return isTrue;
+		    boolean isTrue = DAOConnection.dbDMLWithSQL(sql, user.getU_name(),user.getU_password(),user.getU_age(),user.getU_phone(),user.getU_teacherId(),user.getU_post());
+	    	return isTrue;
 		}
 		return false;
-
 	}
 
 	@Override

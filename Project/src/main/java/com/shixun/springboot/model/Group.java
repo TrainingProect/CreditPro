@@ -3,12 +3,118 @@ package com.shixun.springboot.model;
 import java.io.Serializable;
 
 import com.mysql.fabric.xmlrpc.base.Data;
+import net.bytebuddy.implementation.bind.annotation.Super;
 
 public class Group implements Serializable{
+	@Override
+	public String toString() {
+		return "Group{" +
+				"ResultName='" + ResultName + '\'' +
+				", ResultType='" + ResultType + '\'' +
+				", GroupNumber='" + GroupNumber + '\'' +
+				", Number1='" + Number1 + '\'' +
+				", Number2='" + Number2 + '\'' +
+				", Number3='" + Number3 + '\'' +
+				", Number4='" + Number4 + '\'' +
+				", Number5='" + Number5 + '\'' +
+				", Number6='" + Number6 + '\'' +
+				", CompleteDate='" + CompleteDate + '\'' +
+				'}';
+	}
+
+    private String ResultName;   //成果名称
+	private String ResultType;   //成果类别
+	private String GroupNumber;    //小组成员
+	private String Number1;   //成员
+	private String Number2;
+	private String Number3;
+	private String Number4;
+	private String Number5;
+	private String Number6;
+	private String CompleteDate;   //完成日期
+	public String getResultName() {
+		return ResultName;
+	}
+
+	public void setResultName(String resultName) {
+		ResultName = resultName;
+	}
+
+	public String getResultType() {
+		return ResultType;
+	}
+
+	public void setResultType(String resultType) {
+		ResultType = resultType;
+	}
+
+	public String getGroupNumber() {
+		return GroupNumber;
+	}
+
+	public void setGroupNumber(String groupNumber) {
+		GroupNumber = groupNumber;
+	}
+
+	public String getNumber1() {
+		return Number1;
+	}
+
+	public void setNumber1(String number1) {
+		Number1 = number1;
+	}
+
+	public String getNumber2() {
+		return Number2;
+	}
+
+	public void setNumber2(String number2) {
+		Number2 = number2;
+	}
+
+	public String getNumber3() {
+		return Number3;
+	}
+
+	public void setNumber3(String number3) {
+		Number3 = number3;
+	}
+
+	public String getNumber4() {
+		return Number4;
+	}
+
+	public void setNumber4(String number4) {
+		Number4 = number4;
+	}
+
+	public String getNumber5() {
+		return Number5;
+	}
+
+	public void setNumber5(String number5) {
+		Number5 = number5;
+	}
+
+	public String getNumber6() {
+		return Number6;
+	}
+
+	public void setNumber6(String number6) {
+		Number6 = number6;
+	}
+
+	public String getCompleteDate() {
+		return CompleteDate;
+	}
+
+	public void setCompleteDate(String completeDate) {
+		CompleteDate = completeDate;
+	}
 
 	/**
 	 * g_name,g_leader,g_leaderId,g_members,g_membersNumber,g_explain,g_class,g_count,data
-	 */
+	 *//*
 	private static final long serialVersionUID = 1384764682815006003L;
 	private String g_name;       //项目名称
 	private String g_leader;    //项目组长
@@ -97,8 +203,6 @@ public class Group implements Serializable{
 	}
 
 
-	
-	
-	
-	
+	*/
+
 }

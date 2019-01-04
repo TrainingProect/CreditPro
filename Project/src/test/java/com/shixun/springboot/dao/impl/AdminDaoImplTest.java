@@ -17,17 +17,15 @@ public class AdminDaoImplTest {
 	@Test
 	public void test() {
 
-		List<User> users = adminDao.findUser();
+		List<User> users = adminDao.findUsers("计算机学院");
 		for(User user : users) {
 			System.out.println(user.toString());
 		}
 	}
-	
 
-	
 	@Test
 	public void findUserTest(){
-		User user = adminDao.findUser("111");
+		User user = adminDao.findUser("111","计算机");
 		System.out.println(user.toString());
 	}
 	
@@ -35,10 +33,6 @@ public class AdminDaoImplTest {
 	public void insertTest() {
 		User user = new User("李龙飞","huida2018",25,"13674937997","333","学生",0);
 		adminDao.insert(user);
-	}
-	@Test
-	public void changeTest() {
-		adminDao.change("111", "123");
 	}
 
 }

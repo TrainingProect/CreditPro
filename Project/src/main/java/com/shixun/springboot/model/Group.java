@@ -6,6 +6,17 @@ import com.mysql.fabric.xmlrpc.base.Data;
 import net.bytebuddy.implementation.bind.annotation.Super;
 
 public class Group implements Serializable{
+	private String ResultName;   //成果名称
+	private String ResultType;   //成果类别
+	private String GroupNumber;    //小组成员
+	private String Number1;   //成员
+	private String Number2;
+	private String Number3;
+	private String Number4;
+	private String Number5;
+	private String Number6;
+	private String CompleteDate;   //完成日期
+
 	@Override
 	public String toString() {
 		return "Group{" +
@@ -21,17 +32,6 @@ public class Group implements Serializable{
 				", CompleteDate='" + CompleteDate + '\'' +
 				'}';
 	}
-
-    private String ResultName;   //成果名称
-	private String ResultType;   //成果类别
-	private String GroupNumber;    //小组成员
-	private String Number1;   //成员
-	private String Number2;
-	private String Number3;
-	private String Number4;
-	private String Number5;
-	private String Number6;
-	private String CompleteDate;   //完成日期
 	public String getResultName() {
 		return ResultName;
 	}

@@ -64,6 +64,12 @@ public class AdminDaoImpl extends UserDaoImpl implements AdminDao , UserDao {
 
 	@Override
 	public boolean alterData(User user, Group group, Object... objects) {
+		return false;
+	}
+
+/*
+	@Override
+	public boolean alterData(User user, Group group, Object... objects) {
 		int limit = user.getU_limit();
 		if(limit!=1||limit!=2) {            //判别是否是管理员
 			return false;
@@ -73,5 +79,6 @@ public class AdminDaoImpl extends UserDaoImpl implements AdminDao , UserDao {
 		boolean isTrue = DAOConnection.dbDMLWithSQL(sql, objects,group.getG_leaderId());
 		return isTrue;
 	}
+*/
 
 }

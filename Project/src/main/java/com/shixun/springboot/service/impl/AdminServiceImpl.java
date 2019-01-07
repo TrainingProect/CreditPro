@@ -19,7 +19,7 @@ public class AdminServiceImpl implements AdminService {
 
 	@Override
 	public List<User> findUsers(User user) {
-		return adminDao.findUsers(String.valueOf(user));
+		return adminDao.findUsers(user);
 	}
 
 	@Override

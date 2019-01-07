@@ -22,7 +22,7 @@ public class DAOConnection {
 		Connection connection = getConnection();
 		PreparedStatement statement = null; 
 		List<E> list = new ArrayList<>();
-		ResultSet set = null;       //数据库查询结果存储类
+		ResultSet set = null;
 		try {
 			statement = connection.prepareStatement(sql);
 			for (int i = 1; i <= objects.length; i++) {

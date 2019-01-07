@@ -9,14 +9,14 @@ public class User implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 5399490153823821767L;
-	private String u_name;   //教师姓名
-	private String u_password; //登录密码
-	private int u_age; //教师年龄
-	private String u_phone;//教师手机号
-	private String u_teacherId;//教师工号
+	private String u_name;
+	private String u_password;
+	private int u_age;
+	private String u_phone;
+	private String u_teacherId;
 	private String u_post;//学院
-	private int u_count;//教师绩点
-	private int u_limit;//教师权限
+	private int u_count;
+	private int u_limit;
 	public User(String u_name, String u_password, int u_age, String u_phone, String u_teacherId, String u_post,int u_count) {
 		super();
 		this.u_name = u_name;

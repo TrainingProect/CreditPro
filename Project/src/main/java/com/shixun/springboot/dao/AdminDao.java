@@ -24,7 +24,7 @@ public interface AdminDao extends UserDao{
 	
 	public User findUser(String u_teacherId,String u_post);   //根据职位和学号查询教师用户
 
-	public List<User> findUsers(String u_post);   //显示所在学院所有教师名称
+	public List<User> findUsers(User user);   //显示所在学院所有教师名称
 	
 	public boolean insert(User user);        //添加用户
 	

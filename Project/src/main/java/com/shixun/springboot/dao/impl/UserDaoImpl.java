@@ -45,13 +45,28 @@ public class UserDaoImpl  implements UserDao {
 	}
 
 	@Override
+	public boolean addData(Group group,Object... objects) {
+		//没有添加Group类中的Data,未知
+		/*String sql = "insert into u_group(g_name,g_leader,g_leaderId,g_members,g_membersNumber,g_explain,g_class,g_count) values(?,?,?,?,?,?,?,?);";
+		boolean isTrue = DAOConnection.dbDMLWithSQL(sql,
+				group.getG_name(),group.getG_leader(),group.getG_leaderId(),group.getG_class(),group.getG_count(),group.getG_explain(),group.getG_members(),group.getG_membersNumber());
+		*/
+		return false;
+	}
+
+	@Override
 	public boolean applyUpdate(Group group,Object... objects) {
+
 		return false;
 	}
 
 	@Override
 	public boolean gradeDis(User user, Group group) {
+	/*	int member=group.getG_membersNumber();
+		int allcount=group.getG_count();*/
+
 		return false;
 	}
 
+    /*public message*/
 }

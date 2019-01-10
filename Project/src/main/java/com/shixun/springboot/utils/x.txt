@@ -1,0 +1,14 @@
+用户类的方法有显示个人信息personal()、
+修改个人信息alterPersonal()、
+录入项目小组数据addData()、//
+申请修改项目小组数据applyUpdate()、
+业绩分配gradeDis()
+
+
+
+
+
+人工审核a_reviewPersonal()、
+删除用户deleteUser()、
+查询功能findGroup ()、
+修改业绩数据alterData()的方法

@@ -46,6 +46,15 @@
         <mapping resource="PBook.hbm.xml"></mapping>
         <mapping resource="Team.hbm.xml"></mapping>
         <mapping resource="RRule.hbm.xml"></mapping>
+        <mapping resource="PRRule.hbm.xml"></mapping>
+        <mapping resource="LunWen.hbm.xml"></mapping>
+        <mapping resource="PLunWen.hbm.xml"></mapping>
+        <mapping resource="Identify.hbm.xml"></mapping>
+        <mapping resource="PIdentify.hbm.xml"></mapping>
+        <mapping resource="DProject.hbm.xml"></mapping>
+        <mapping resource="PDProject.hbm.xml"></mapping>
+        <mapping resource="Law.hbm.xml"></mapping>
+        <mapping resource="PLaw.hbm.xml"></mapping>
 
     </session-factory>
 </hibernate-configuration>

@@ -1,8 +1,103 @@
 package model;
 
 public class PLunWen {
+    public String getTeacherId() {
+        return teacherId;
+    }
 
+    public void setTeacherId(String teacherId) {
+        this.teacherId = teacherId;
+    }
 
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public String getSex() {
+        return Sex;
+    }
+
+    public void setSex(String sex) {
+        Sex = sex;
+    }
+
+    public int getContribution() {
+        return Contribution;
+    }
+
+    public void setContribution(int contribution) {
+        Contribution = contribution;
+    }
+
+    public String getKind() {
+        return Kind;
+    }
+
+    public void setKind(String kind) {
+        Kind = kind;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        Name = name;
+    }
+
+    public String getEducation() {
+        return Education;
+    }
+
+    public void setEducation(String education) {
+        Education = education;
+    }
+
+    public String getJob() {
+        return Job;
+    }
+
+    public void setJob(String job) {
+        Job = job;
+    }
+
+    public String getUnit() {
+        return Unit;
+    }
+
+    public void setUnit(String unit) {
+        Unit = unit;
+    }
+
+    public String getIfTell() {
+        return IfTell;
+    }
+
+    public void setIfTell(String ifTell) {
+        IfTell = ifTell;
+    }
+
+    @Override
+    public String toString() {
+        return "PLunWen{" +
+                "teacherId='" + teacherId + '\'' +
+                ", ID=" + ID +
+                ", Sex='" + Sex + '\'' +
+                ", Contribution=" + Contribution +
+                ", Kind='" + Kind + '\'' +
+                ", Name='" + Name + '\'' +
+                ", Education='" + Education + '\'' +
+                ", Job='" + Job + '\'' +
+                ", Unit='" + Unit + '\'' +
+                ", IfTell='" + IfTell + '\'' +
+                '}';
+    }
+
+    private String teacherId;
     private int ID;   //署名顺序
     private String Sex;   //性别
     private int Contribution; //贡献率

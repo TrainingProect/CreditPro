@@ -13,15 +13,6 @@ import java.lang.reflect.Array;
 public class AdminDaoImplTest {
     AdminDao adminDao = new AdminDaoImpl();
 
-    //测试新表类功能
-    @Test
-    public void demo1() {
-        Session session = hibernateutils.openSession();
-        Transaction transaction = session.beginTransaction();
-
-        transaction.commit();
-    }
-
     @Test
     public void display() {
         adminDao.display();

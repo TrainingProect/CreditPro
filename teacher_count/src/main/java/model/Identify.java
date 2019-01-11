@@ -107,11 +107,11 @@ public class Identify {
         CompleteUnit = completeUnit;
     }
 
-    public int getID() {
+    public String getID() {
         return ID;
     }
 
-    public void setID(int ID) {
+    public void setID(String ID) {
         this.ID = ID;
     }
 
@@ -139,7 +139,7 @@ public class Identify {
                 ", ProjectSource='" + ProjectSource + '\'' +
                 ", School='" + School + '\'' +
                 ", CompleteUnit='" + CompleteUnit + '\'' +
-                ", ID=" + ID +
+                ", ID='" + ID + '\'' +
                 ", Conclusion='" + Conclusion + '\'' +
                 '}';
     }
@@ -157,7 +157,7 @@ public class Identify {
     private String ProjectSource;//项目来源
     private String School;//学校署名
     private String CompleteUnit;//完成单位
-    private int ID;//鉴定号
+    private String ID;//鉴定号
     private String Conclusion;//鉴定结论
 
 }

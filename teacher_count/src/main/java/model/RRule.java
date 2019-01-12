@@ -3,35 +3,6 @@ package model;
 import java.util.Date;
 
 public class RRule {
-
-
-    @Override
-    public String toString() {
-        return "RRule{" +
-                "teacherId='" + teacherId + '\'' +
-                ", Name='" + Name + '\'' +
-                ", Unit='" + Unit + '\'' +
-                ", kind='" + kind + '\'' +
-                ", Id='" + Id + '\'' +
-                ", STime=" + STime +
-                ", ETime=" + ETime +
-                ", IfExist='" + IfExist + '\'' +
-                ", Deparment='" + Deparment + '\'' +
-                ", Industry='" + Industry + '\'' +
-                '}';
-    }
-
-    private String teacherId;
-    private String Name;  //标准名称
-    private String Unit;  //单位
-    private String kind;  //标准类别
-    private String Id; //标准ID
-    private Date STime;  //开始时间
-    private Date ETime;   //完成时间
-    private String IfExist;   //是否发布
-    private String Deparment;   //发布部门
-    private String Industry;  //所属行业
-
     public String getTeacherId() {
         return teacherId;
     }
@@ -72,19 +43,19 @@ public class RRule {
         Id = id;
     }
 
-    public Date getSTime() {
+    public String getSTime() {
         return STime;
     }
 
-    public void setSTime(Date STime) {
+    public void setSTime(String STime) {
         this.STime = STime;
     }
 
-    public Date getETime() {
+    public String getETime() {
         return ETime;
     }
 
-    public void setETime(Date ETime) {
+    public void setETime(String ETime) {
         this.ETime = ETime;
     }
 
@@ -111,5 +82,32 @@ public class RRule {
     public void setIndustry(String industry) {
         Industry = industry;
     }
+
+    @Override
+    public String toString() {
+        return "RRule{" +
+                "teacherId='" + teacherId + '\'' +
+                ", Name='" + Name + '\'' +
+                ", Unit='" + Unit + '\'' +
+                ", kind='" + kind + '\'' +
+                ", Id='" + Id + '\'' +
+                ", STime='" + STime + '\'' +
+                ", ETime='" + ETime + '\'' +
+                ", IfExist='" + IfExist + '\'' +
+                ", Deparment='" + Deparment + '\'' +
+                ", Industry='" + Industry + '\'' +
+                '}';
+    }
+
+    private String teacherId;
+    private String Name;  //标准名称
+    private String Unit;  //单位
+    private String kind;  //标准类别
+    private String Id; //标准ID
+    private String STime;  //开始时间
+    private String ETime;   //完成时间
+    private String IfExist;   //是否发布
+    private String Deparment;   //发布部门
+    private String Industry;  //所属行业
 }
 

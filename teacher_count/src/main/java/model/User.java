@@ -1,7 +1,6 @@
 package model;
 
 public class User {
-
     public String getPassword() {
         return password;
     }
@@ -10,12 +9,20 @@ public class User {
         this.password = password;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public int getAge() {
         return age;
     }
 
     public void setAge(int age) {
-        this.age = age;
+        this.age = 0;
     }
 
     public String getPhone() {
@@ -47,16 +54,15 @@ public class User {
     }
 
     public void setCount(int count) {
-        this.count = count;
+        this.count = 0;
     }
 
-
-    public String getName() {
-        return name;
+    public int getLimit1() {
+        return limit1;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setLimit1(int limit1) {
+        this.limit1 = 0;
     }
 
     @Override
@@ -69,7 +75,7 @@ public class User {
                 ", teacherId='" + teacherId + '\'' +
                 ", post='" + post + '\'' +
                 ", count=" + count +
-                ", limit=" + limit1 +
+                ", limit1=" + limit1 +
                 '}';
     }
 
@@ -82,13 +88,5 @@ public class User {
     private int count;
     private int limit1;
 
-
-    public int getLimit1() {
-        return limit1;
-    }
-
-    public void setLimit1(int limit1) {
-        this.limit1 = limit1;
-    }
 
 }

@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 public class Team implements Serializable{
 
-
 	@Override
 	public String toString() {
 		return "Team{" +
@@ -19,6 +18,7 @@ public class Team implements Serializable{
 				", numb5='" + numb5 + '\'' +
 				", numb6='" + numb6 + '\'' +
 				", Atime1='" + Atime1 + '\'' +
+				", Status1='" + Status1 + '\'' +
 				'}';
 	}
 
@@ -33,6 +33,15 @@ public class Team implements Serializable{
 	private String numb5;   //成员5
 	private String numb6;   //成员6
 	private String Atime1;   //完成日期
+	private String Status1;   //审核状态
+
+	public String getStatus1() {
+		return Status1;
+	}
+
+	public void setStatus1(String status1) {
+		Status1 = status1;
+	}
 
 	public String getTeacherId() {
 		return teacherId;

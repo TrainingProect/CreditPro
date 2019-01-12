@@ -1,6 +1,30 @@
 package model;
 
 public class User {
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "password='" + password + '\'' +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", phone='" + phone + '\'' +
+                ", teacherId='" + teacherId + '\'' +
+                ", post='" + post + '\'' +
+                ", count=" + count +
+                ", limit1=" + limit1 +
+                '}';
+    }
+
+    private String password;
+    private String name;
+    private int age;
+    private String phone;
+    private String teacherId;
+    private String post;
+    private int count;
+    private int limit1;
+
     public String getPassword() {
         return password;
     }
@@ -22,7 +46,7 @@ public class User {
     }
 
     public void setAge(int age) {
-        this.age = 0;
+        this.age = age;
     }
 
     public String getPhone() {
@@ -54,7 +78,7 @@ public class User {
     }
 
     public void setCount(int count) {
-        this.count = 0;
+        this.count = count;
     }
 
     public int getLimit1() {
@@ -62,31 +86,6 @@ public class User {
     }
 
     public void setLimit1(int limit1) {
-        this.limit1 = 0;
+        this.limit1 = limit1;
     }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "password='" + password + '\'' +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                ", phone='" + phone + '\'' +
-                ", teacherId='" + teacherId + '\'' +
-                ", post='" + post + '\'' +
-                ", count=" + count +
-                ", limit1=" + limit1 +
-                '}';
-    }
-
-    private String password;
-    private String name;
-    private int age;
-    private String phone;
-    private String teacherId;
-    private String post;
-    private int count;
-    private int limit1;
-
-
 }

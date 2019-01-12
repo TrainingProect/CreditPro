@@ -78,4 +78,9 @@ public class AdminDaoImplTest {
         session.update(teacherId,user);*/
         transaction.commit();
     }
+    @Test
+    public void reviewPersonal(){
+
+    }
+
 }

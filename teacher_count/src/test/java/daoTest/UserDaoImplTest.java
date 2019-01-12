@@ -45,47 +45,83 @@ public class UserDaoImplTest {
         String num6 = null;
         String Atime1 = "看人";
         String Status1 = "1";
-        userDao.TeamData(teacherId,name,kind,allNumber,num1,num2,num3,num4,num5,num6,Atime1,Status1);
+        userDao.TeamData(teacherId, name, kind, allNumber, num1, num2, num3, num4, num5, num6, Atime1, Status1);
     }
+
     @Test
-    public void RRuleData(){
-        String teacherId = "3";
-        String Name = "教师科研项目小组";
-        String unit = "实训";
-        String kind= "庞棣、王宏飞、蔡明";
-        String id = "1";
-        String STime = "2019.1.12";
-        String ETime = "2019.1.18";
-        String Ifexist = "不";
-        String Department = "计算机学院";
-        String Industry = "IT";
-        userDao.RRuleData(teacherId,Name,unit,kind,id,STime,ETime,Ifexist,Department,Industry);
-    }
-    @Test
-    public void PRRuleData(){
+    public void AwardData() {
         String teacherId = "1";
-        int id = 1;
-        String kind= "庞棣";
-        String Name = "教师科研项目小组";
-        String Sex = "男";
-        String Education = "2019.1.18";
-        String Job="学生";
-        String unit = "实训";
-        int Contribution = 100;
-        userDao.PRRuleData(teacherId,id,kind,Name,Sex,Education,Job,unit,Contribution);
+        String AwardName = "1";
+        String ResultName = "1";
+        String Unit = "1";
+        int AwardNumber = 1;
+        String Department = "1";
+        String AwardTime = "1";
+        String Level1 = "1";
+        String Level2 = "1";
+        String CompleteUnit = "中原工学院";
+        int CompleteNumber = 3;
+        int UnitLevel = 1;
+        String AwardID = "1";
+        String StudyType = "1";
+        String OneStudy = "1";
+        String ProjectSource = "1";
+        String Kind1 = "1";
+        String Kind2 = "1";
+        String Award = "1";
+        userDao.AwardData(teacherId, AwardName, ResultName, Unit, AwardNumber, Department, AwardTime, Level1, Level2,
+                CompleteUnit, CompleteNumber, UnitLevel, AwardID, StudyType, OneStudy, ProjectSource, Kind1, Kind2, Award);
     }
+
     @Test
-    public void findTeam(){
-        String  name="赵";
+    public void LunWenData() {
+        String teacherId = "1";
+        String Title = "jiashi ";
+        String Kind = "编写";
+        String STime = "2019.1.12";
+        String PublicationName = "持久层";
+        String Collection = "无";
+        String Unit = "无";
+        String StudyType = "无";
+        String OneStud = "无";
+        String ProjectSource = "无";
+        int Count = 12;
+        String School = "无";
+        String PublicationLevel = "无";
+        String IfTranslation = "无";
+        String CN = "无";
+        String PublicationRange = "无";
+        userDao.LunWenData(teacherId, Title, Kind, STime, PublicationName, Collection, Unit, StudyType, OneStud, ProjectSource, Count, School, PublicationLevel, IfTranslation, CN, PublicationRange);
+    }
+
+    @Test
+    public void findTeam() {
+        String name = "赵";
         userDao.findTeam(name);
     }
+
     @Test
-    public void changePersonal(){               //修改个人基本信息
+    public void findRRule() {
+        String teacherId = "1";
+        userDao.findTeam(teacherId);
+    }
+
+
+
+    @Test
+    public void findLunWen() {
+        String teacherId = "1";
+        userDao.findLunWen(teacherId);
+    }
+
+
+    @Test
+    public void changePersonal() {               //修改个人基本信息
         String teacherId = "201608040118";
-        String name="庞棣";
-        String phone="13140109160";
-        int age=20;
-        userDao.changePersonal(teacherId,age,name,phone);
+        String name = "庞棣";
+        String phone = "13140109160";
+        int age = 20;
+        userDao.changePersonal(teacherId, age, name, phone);
     }
 
 }

@@ -4,21 +4,37 @@ import java.util.Date;
 
 public class Award {
 
+    private String teacherId; //教师工号
+    private String AwardName;  //获奖名称
+    private String ResultName;  //获奖名称
+    private String Unit;  //所属单位
+    private String Department;  //发证机关
+    private String AwardTime;  //获奖时间
+    private String Level1;  //获奖级别
+    private String Level2;  //获奖等级
+    private String CompleteUnit;  //完成单位
+    private String AwardID;  //获奖ID
+    private String StudyType;  //学科门类
+    private String OneStudy;  //一级学科
+    private String ProjectSource;  //项目来源
+    private String Kind1;  //成果形式1
+    private String Kind2;  //成果形式2
+    private String Award;  //获奖类别
+    private int AwardNumber;  //获奖人数
+    private int CompleteNumber;  //总参加单位数
+    private int UnitLevel;  //单位排名
+
     @Override
     public String toString() {
         return "Award{" +
-                "teacherId='" + teacherId + '\'' +
-                ", AwardName='" + AwardName + '\'' +
+                "AwardName='" + AwardName + '\'' +
                 ", ResultName='" + ResultName + '\'' +
                 ", Unit='" + Unit + '\'' +
-                ", AwardNumber=" + AwardNumber +
                 ", Department='" + Department + '\'' +
                 ", AwardTime='" + AwardTime + '\'' +
                 ", Level1='" + Level1 + '\'' +
                 ", Level2='" + Level2 + '\'' +
                 ", CompleteUnit='" + CompleteUnit + '\'' +
-                ", CompleteNumber=" + CompleteNumber +
-                ", UnitLevel=" + UnitLevel +
                 ", AwardID='" + AwardID + '\'' +
                 ", StudyType='" + StudyType + '\'' +
                 ", OneStudy='" + OneStudy + '\'' +
@@ -26,9 +42,35 @@ public class Award {
                 ", Kind1='" + Kind1 + '\'' +
                 ", Kind2='" + Kind2 + '\'' +
                 ", Award='" + Award + '\'' +
+                ", AwardNumber=" + AwardNumber +
+                ", CompleteNumber=" + CompleteNumber +
+                ", UnitLevel=" + UnitLevel +
                 '}';
     }
 
+    public int getAwardNumber() {
+        return AwardNumber;
+    }
+
+    public void setAwardNumber(int awardNumber) {
+        AwardNumber = awardNumber;
+    }
+
+    public int getCompleteNumber() {
+        return CompleteNumber;
+    }
+
+    public void setCompleteNumber(int completeNumber) {
+        CompleteNumber = completeNumber;
+    }
+
+    public int getUnitLevel() {
+        return UnitLevel;
+    }
+
+    public void setUnitLevel(int unitLevel) {
+        UnitLevel = unitLevel;
+    }
     public String getTeacherId() {
         return teacherId;
     }
@@ -156,51 +198,5 @@ public class Award {
     public void setAward(String award) {
         Award = award;
     }
-
-    private String teacherId; //教师工号
-    private String AwardName;  //获奖名称
-    private String ResultName;  //获奖名称
-    private String Unit;  //所属单位
-    private String Department;  //发证机关
-    private String AwardTime;  //获奖时间
-    private String Level1;  //获奖级别
-    private String Level2;  //获奖等级
-    private String CompleteUnit;  //完成单位
-    private String AwardID;  //获奖ID
-    private String StudyType;  //学科门类
-    private String OneStudy;  //一级学科
-    private String ProjectSource;  //项目来源
-    private String Kind1;  //成果形式1
-    private String Kind2;  //成果形式2
-    private String Award;  //获奖类别
-
-    public int getAwardNumber() {
-        return AwardNumber;
-    }
-
-    public void setAwardNumber(int awardNumber) {
-        AwardNumber = awardNumber;
-    }
-
-    public int getCompleteNumber() {
-        return CompleteNumber;
-    }
-
-    public void setCompleteNumber(int completeNumber) {
-        CompleteNumber = completeNumber;
-    }
-
-    public int getUnitLevel() {
-        return UnitLevel;
-    }
-
-    public void setUnitLevel(int unitLevel) {
-        UnitLevel = unitLevel;
-    }
-
-    private int AwardNumber;  //获奖人数
-    private int CompleteNumber;  //总参加单位数
-    private int UnitLevel;  //单位排名
-
 
 }

@@ -3,6 +3,24 @@ package model;
 import java.util.Date;
 
 public class Identify {
+
+
+    private String teacherId;
+    private String ResultName;    //成果名称
+    private String Unit;            //所属单位
+    private String Department;  //鉴定部门
+    private String STime;   //鉴定时间
+    private String Level;  //鉴定级别
+    private String CompleteWay;// 完成形式
+    private String StudyType;// 学科门类
+    private String OneStudy;//一级学科
+    private String TwoStudy;//二级学科
+    private String ProjectSource;//项目来源
+    private String School;//学校署名
+    private String CompleteUnit;//完成单位
+    private String ID;//鉴定号
+    private String Conclusion;//鉴定结论
+
     public String getTeacherId() {
         return teacherId;
     }
@@ -14,6 +32,7 @@ public class Identify {
     public String getResultName() {
         return ResultName;
     }
+
 
     public void setResultName(String resultName) {
         ResultName = resultName;
@@ -126,8 +145,7 @@ public class Identify {
     @Override
     public String toString() {
         return "Identify{" +
-                "teacherId='" + teacherId + '\'' +
-                ", ResultName='" + ResultName + '\'' +
+                "ResultName='" + ResultName + '\'' +
                 ", Unit='" + Unit + '\'' +
                 ", Department='" + Department + '\'' +
                 ", STime='" + STime + '\'' +
@@ -143,21 +161,5 @@ public class Identify {
                 ", Conclusion='" + Conclusion + '\'' +
                 '}';
     }
-
-    private String teacherId;
-    private String ResultName;    //成果名称
-    private String Unit;            //所属单位
-    private String Department;  //鉴定部门
-    private String STime;   //鉴定时间
-    private String Level;  //鉴定级别
-    private String CompleteWay;// 完成形式
-    private String StudyType;// 学科门类
-    private String OneStudy;//一级学科
-    private String TwoStudy;//二级学科
-    private String ProjectSource;//项目来源
-    private String School;//学校署名
-    private String CompleteUnit;//完成单位
-    private String ID;//鉴定号
-    private String Conclusion;//鉴定结论
 
 }

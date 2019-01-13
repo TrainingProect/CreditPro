@@ -6,15 +6,15 @@
     <!-- 建立类与表的映射 -->
     <class name="model.RRule" table="rrule">
         <!-- 建立类中的属性与表中的主键对应 -->
-        <id name="teacherId" column="teacherId">
+        <id name="Name" column="Name" >
             <generator class="assigned"/>
         </id>
 
         <!-- 建立类中的普通的属性和表的字段的对应 -->
-        <property name="Name" column="Name"/>
+        <property name="Id" column="Id"/>
         <property name="Kind" column="Kind"/>
         <property name="Unit" column="Unit"/>
-        <property name="Id" column="Id"/>
+        <property name="teacherId" column="teacherId"/>
         <property name="STime" column="STime"/>
         <property name="ETime" column="ETime"/>
         <property name="IfExist" column="IfExist"/>

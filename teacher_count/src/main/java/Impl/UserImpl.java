@@ -20,8 +20,7 @@ public class UserImpl implements UserDao {
         Session session = hibernateutils.openSession();
         Transaction transaction = session.beginTransaction();
         User user = session.get(User.class, teacherId);
-        System.out.println("工号:" + user.getTeacherId() + "  姓名" + user.getName() + "  年龄:" + user.getAge()
-                + "  联系电话:" + user.getPhone() + "  院系:" + user.getPost() + "  绩点" + user.getCount());
+        System.out.println(user);
         transaction.commit();
     }
 
@@ -56,6 +55,7 @@ public class UserImpl implements UserDao {
         Session session = hibernateutils.openSession();
         Transaction transaction = session.beginTransaction();
 
+        //根据姓名在表中查询相关实体信息
         Criteria criteria = session.createCriteria(Team.class);
         criteria.add(Restrictions.eq("numb1", name));
         criteria.add(Restrictions.or(Restrictions.eq("numb2", name)));
@@ -71,92 +71,408 @@ public class UserImpl implements UserDao {
     }
 
     @Override
-    public void findRRule(String teacherId) {
+    public void findRRule(String name) {
         Session session = hibernateutils.openSession();
         Transaction transaction = session.beginTransaction();
-        if (session.get(RRule.class, teacherId) == null)
-            System.out.println("你并没有参与这个项目");
-        else
-            System.out.println(session.get(RRule.class, teacherId));
+
+        //确认是否为小组成员
+        Criteria criteria = session.createCriteria(Team.class);
+        criteria.add(Restrictions.eq("numb1", name));
+        criteria.add(Restrictions.or(Restrictions.eq("numb2", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb3", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb4", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb5", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb6", name)));
+        List<Team> list = criteria.list();
+        for (Team team : list){
+            //根据小组组长Id来查看本组的相关表信息
+            String id=team.getTeacherId();
+            Criteria criteria1 = session.createCriteria(RRule.class);
+            criteria1.add(Restrictions.eq("teacherId", id));
+            List<RRule> list1 = criteria1.list();
+            for (RRule rRule : list1)
+                System.out.println(rRule);
+        }
+
         transaction.commit();
     }
 
 
     @Override
-    public void findAward(String teacherId) {
+    public void findAward(String name) {
         Session session = hibernateutils.openSession();
         Transaction transaction = session.beginTransaction();
-        if (session.get(Award.class, teacherId) == null)
-            System.out.println("你并没有参与这个项目");
-        else
-            System.out.println(session.get(Award.class, teacherId));
+        //确认是否为小组成员
+        Criteria criteria = session.createCriteria(Team.class);
+        criteria.add(Restrictions.eq("numb1", name));
+        criteria.add(Restrictions.or(Restrictions.eq("numb2", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb3", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb4", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb5", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb6", name)));
+        List<Team> list = criteria.list();
+        for (Team team : list){
+            //根据小组组长Id来查看本组的相关表信息
+            String id=team.getTeacherId();
+            Criteria criteria1 = session.createCriteria(Award.class);
+            criteria1.add(Restrictions.eq("teacherId", id));
+            List<Award> list1 = criteria1.list();
+            for (Award award : list1)
+                System.out.println(award);
+        }
         transaction.commit();
     }
 
 
     @Override
-    public void findLunWen(String teacherId) {
+    public void findLunWen(String name) {
         Session session = hibernateutils.openSession();
         Transaction transaction = session.beginTransaction();
-        if (session.get(LunWen.class, teacherId) == null)
-            System.out.println("你并没有参与这个项目");
-        else
-            System.out.println(session.get(LunWen.class, teacherId));
+        //确认是否为小组成员
+        Criteria criteria = session.createCriteria(Team.class);
+        criteria.add(Restrictions.eq("numb1", name));
+        criteria.add(Restrictions.or(Restrictions.eq("numb2", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb3", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb4", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb5", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb6", name)));
+        List<Team> list = criteria.list();
+        for (Team team : list){
+            //根据小组组长Id来查看本组的相关表信息
+            String id=team.getTeacherId();
+            Criteria criteria1 = session.createCriteria(LunWen.class);
+            criteria1.add(Restrictions.eq("teacherId", id));
+            List<LunWen> list1 = criteria.list();
+            for (LunWen lunWen : list1)
+                System.out.println(lunWen);
+        }
         transaction.commit();
     }
 
     @Override
-    public void findIdentify(String teacherId) {
+    public void findIdentify(String name) {
         Session session = hibernateutils.openSession();
         Transaction transaction = session.beginTransaction();
-        if (session.get(Identify.class, teacherId) == null)
-            System.out.println("你并没有参与这个项目");
-        else
-            System.out.println(session.get(Identify.class, teacherId));
+        //确认是否为小组成员
+        Criteria criteria = session.createCriteria(Team.class);
+        criteria.add(Restrictions.eq("numb1", name));
+        criteria.add(Restrictions.or(Restrictions.eq("numb2", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb3", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb4", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb5", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb6", name)));
+        List<Team> list = criteria.list();
+        for (Team team : list){
+            //根据小组组长Id来查看本组的相关表信息
+            String id=team.getTeacherId();
+            Criteria criteria1 = session.createCriteria(Identify.class);
+            criteria1.add(Restrictions.eq("teacherId", id));
+            List<Identify> list1 = criteria.list();
+            for (Identify identify : list1)
+                System.out.println(identify);
+        }
         transaction.commit();
     }
 
     @Override
-    public void findDProject(String teacherId) {
+    public void findDProject(String name) {
         Session session = hibernateutils.openSession();
         Transaction transaction = session.beginTransaction();
-        if (session.get(DProject.class, teacherId) == null)
-            System.out.println("你并没有参与这个项目");
-        else
-            System.out.println(session.get(DProject.class, teacherId));
+        //确认是否为小组成员
+        Criteria criteria = session.createCriteria(Team.class);
+        criteria.add(Restrictions.eq("numb1", name));
+        criteria.add(Restrictions.or(Restrictions.eq("numb2", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb3", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb4", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb5", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb6", name)));
+        List<Team> list = criteria.list();
+        for (Team team : list){
+            //根据小组组长Id来查看本组的相关表信息
+            String id=team.getTeacherId();
+            Criteria criteria1 = session.createCriteria(DProject.class);
+            criteria1.add(Restrictions.eq("teacherId", id));
+            List<DProject> list1 = criteria.list();
+            for (DProject dProject : list1)
+                System.out.println(dProject);
+        }
         transaction.commit();
     }
 
     @Override
-    public void findArt(String teacherId) {
+    public void findArt(String name) {
         Session session = hibernateutils.openSession();
         Transaction transaction = session.beginTransaction();
-        if (session.get(Art.class, teacherId) == null)
-            System.out.println("你并没有参与这个项目");
-        else
-            System.out.println(session.get(Art.class, teacherId));
+        //确认是否为小组成员
+        Criteria criteria = session.createCriteria(Team.class);
+        criteria.add(Restrictions.eq("numb1", name));
+        criteria.add(Restrictions.or(Restrictions.eq("numb2", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb3", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb4", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb5", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb6", name)));
+        List<Team> list = criteria.list();
+        for (Team team : list){
+            //根据小组组长Id来查看本组的相关表信息
+            String id=team.getTeacherId();
+            Criteria criteria1 = session.createCriteria(Art.class);
+            criteria1.add(Restrictions.eq("teacherId", id));
+            List<Art> list1 = criteria.list();
+            for (Art art : list1)
+                System.out.println(art);
+        }
         transaction.commit();
     }
 
     @Override
-    public void findBook(String teacherId) {
+    public void findBook(String name) {
         Session session = hibernateutils.openSession();
         Transaction transaction = session.beginTransaction();
-        if (session.get(Book.class, teacherId) == null)
-            System.out.println("你并没有参与这个项目");
-        else
-            System.out.println(session.get(Book.class, teacherId));
+        //确认是否为小组成员
+        Criteria criteria = session.createCriteria(Team.class);
+        criteria.add(Restrictions.eq("numb1", name));
+        criteria.add(Restrictions.or(Restrictions.eq("numb2", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb3", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb4", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb5", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb6", name)));
+        List<Team> list = criteria.list();
+        for (Team team : list){
+            //根据小组组长Id来查看本组的相关表信息
+            String id=team.getTeacherId();
+            Criteria criteria1 = session.createCriteria(Book.class);
+            criteria1.add(Restrictions.eq("teacherId", id));
+            List<Book> list1 = criteria.list();
+            for (Book book : list1)
+                System.out.println(book);
+        }
         transaction.commit();
     }
 
     @Override
-    public void findLaw(String teacherId) {
+    public void findLaw(String name) {
         Session session = hibernateutils.openSession();
         Transaction transaction = session.beginTransaction();
-        if (session.get(Law.class, teacherId) == null)
-            System.out.println("你并没有参与这个项目");
-        else
-            System.out.println(session.get(Law.class, teacherId));
+        //确认是否为小组成员
+        Criteria criteria = session.createCriteria(Team.class);
+        criteria.add(Restrictions.eq("numb1", name));
+        criteria.add(Restrictions.or(Restrictions.eq("numb2", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb3", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb4", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb5", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb6", name)));
+        List<Team> list = criteria.list();
+        for (Team team : list){
+            //根据小组组长Id来查看本组的相关表信息
+            String id=team.getTeacherId();
+            Criteria criteria1 = session.createCriteria(Law.class);
+            criteria1.add(Restrictions.eq("teacherId", id));
+            List<Law> list1 = criteria.list();
+            for (Law law : list1)
+                System.out.println(law);
+        }
+        transaction.commit();
+    }
+
+
+    @Override
+    public void findPAward(String name) {
+        Session session = hibernateutils.openSession();
+        Transaction transaction = session.beginTransaction();
+        //确认是否为小组成员
+        Criteria criteria = session.createCriteria(Team.class);
+        criteria.add(Restrictions.eq("numb1", name));
+        criteria.add(Restrictions.or(Restrictions.eq("numb2", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb3", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb4", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb5", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb6", name)));
+        List<Team> list = criteria.list();
+        for (Team team : list){
+            //根据小组组长Id来查看本组的相关表信息
+            String id=team.getTeacherId();
+            Criteria criteria1 = session.createCriteria(PAward.class);
+            criteria1.add(Restrictions.eq("teacherId", id));
+            List<PAward> list1 = criteria.list();
+            for (PAward pAward : list1)
+                System.out.println(pAward);
+        }
+        transaction.commit();
+    }
+
+    @Override
+    public void findPRRule(String name) {
+        Session session = hibernateutils.openSession();
+        Transaction transaction = session.beginTransaction();
+        //确认是否为小组成员
+        Criteria criteria = session.createCriteria(Team.class);
+        criteria.add(Restrictions.eq("numb1", name));
+        criteria.add(Restrictions.or(Restrictions.eq("numb2", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb3", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb4", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb5", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb6", name)));
+        List<Team> list = criteria.list();
+        for (Team team : list){
+            //根据小组组长Id来查看本组的相关表信息
+            String id=team.getTeacherId();
+            Criteria criteria1 = session.createCriteria(PRRule.class);
+            criteria1.add(Restrictions.eq("teacherId", id));
+            List<PRRule> list1 = criteria.list();
+            for (PRRule prRule : list1)
+                System.out.println(prRule);
+        }
+        transaction.commit();
+    }
+
+    @Override
+    public void findPLunWen(String name) {
+        Session session = hibernateutils.openSession();
+        Transaction transaction = session.beginTransaction();
+        //确认是否为小组成员
+        Criteria criteria = session.createCriteria(Team.class);
+        criteria.add(Restrictions.eq("numb1", name));
+        criteria.add(Restrictions.or(Restrictions.eq("numb2", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb3", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb4", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb5", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb6", name)));
+        List<Team> list = criteria.list();
+        for (Team team : list){
+            //根据小组组长Id来查看本组的相关表信息
+            String id=team.getTeacherId();
+            Criteria criteria1 = session.createCriteria(PLunWen.class);
+            criteria1.add(Restrictions.eq("teacherId", id));
+            List<PLunWen> list1 = criteria.list();
+            for (PLunWen pLunWen : list1)
+                System.out.println(pLunWen);
+        }
+        transaction.commit();
+
+    }
+
+    @Override
+    public void findPIdentify(String name) {
+        Session session = hibernateutils.openSession();
+        Transaction transaction = session.beginTransaction();
+        //确认是否为小组成员
+        Criteria criteria = session.createCriteria(Team.class);
+        criteria.add(Restrictions.eq("numb1", name));
+        criteria.add(Restrictions.or(Restrictions.eq("numb2", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb3", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb4", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb5", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb6", name)));
+        List<Team> list = criteria.list();
+        for (Team team : list){
+            //根据小组组长Id来查看本组的相关表信息
+            String id=team.getTeacherId();
+            Criteria criteria1 = session.createCriteria(PIdentify.class);
+            criteria1.add(Restrictions.eq("teacherId", id));
+            List<PIdentify> list1 = criteria.list();
+            for (PIdentify pIdentify : list1)
+                System.out.println(pIdentify);
+        }
+        transaction.commit();
+    }
+
+    @Override
+    public void findPDProject(String name) {
+        Session session = hibernateutils.openSession();
+        Transaction transaction = session.beginTransaction();
+        //确认是否为小组成员
+        Criteria criteria = session.createCriteria(Team.class);
+        criteria.add(Restrictions.eq("numb1", name));
+        criteria.add(Restrictions.or(Restrictions.eq("numb2", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb3", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb4", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb5", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb6", name)));
+        List<Team> list = criteria.list();
+        for (Team team : list){
+            //根据小组组长Id来查看本组的相关表信息
+            String id=team.getTeacherId();
+            Criteria criteria1 = session.createCriteria(PDProject.class);
+            criteria1.add(Restrictions.eq("teacherId", id));
+            List<PDProject> list1 = criteria.list();
+            for (PDProject pdProject : list1)
+                System.out.println(pdProject);
+        }
+        transaction.commit();
+    }
+
+    @Override
+    public void findPArt(String name) {
+        Session session = hibernateutils.openSession();
+        Transaction transaction = session.beginTransaction();
+        //确认是否为小组成员
+        Criteria criteria = session.createCriteria(Team.class);
+        criteria.add(Restrictions.eq("numb1", name));
+        criteria.add(Restrictions.or(Restrictions.eq("numb2", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb3", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb4", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb5", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb6", name)));
+        List<Team> list = criteria.list();
+        for (Team team : list){
+            //根据小组组长Id来查看本组的相关表信息
+            String id=team.getTeacherId();
+            Criteria criteria1 = session.createCriteria(PArt.class);
+            criteria1.add(Restrictions.eq("teacherId", id));
+            List<PArt> list1 = criteria.list();
+            for (PArt pArt : list1)
+                System.out.println(pArt);
+        }
+        transaction.commit();
+    }
+
+    @Override
+    public void findPBook(String name) {
+        Session session = hibernateutils.openSession();
+        Transaction transaction = session.beginTransaction();
+        //确认是否为小组成员
+        Criteria criteria = session.createCriteria(Team.class);
+        criteria.add(Restrictions.eq("numb1", name));
+        criteria.add(Restrictions.or(Restrictions.eq("numb2", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb3", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb4", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb5", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb6", name)));
+        List<Team> list = criteria.list();
+        for (Team team : list){
+            //根据小组组长Id来查看本组的相关表信息
+            String id=team.getTeacherId();
+            Criteria criteria1 = session.createCriteria(PBook.class);
+            criteria1.add(Restrictions.eq("teacherId", id));
+            List<PBook> list1 = criteria.list();
+            for (PBook pBook : list1)
+                System.out.println(pBook);
+        }
+        transaction.commit();
+    }
+
+    @Override
+    public void findPLaw(String name) {
+        Session session = hibernateutils.openSession();
+        Transaction transaction = session.beginTransaction();
+        //确认是否为小组成员
+        Criteria criteria = session.createCriteria(Team.class);
+        criteria.add(Restrictions.eq("numb1", name));
+        criteria.add(Restrictions.or(Restrictions.eq("numb2", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb3", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb4", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb5", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb6", name)));
+        List<Team> list = criteria.list();
+        for (Team team : list){
+            //根据小组组长Id来查看本组的相关表信息
+            String id=team.getTeacherId();
+            Criteria criteria1 = session.createCriteria(PLaw.class);
+            criteria1.add(Restrictions.eq("teacherId", id));
+            List<PLaw> list1 = criteria.list();
+            for (PLaw pLaw : list1)
+                System.out.println(pLaw);
+        }
         transaction.commit();
     }
 
@@ -179,11 +495,14 @@ public class UserImpl implements UserDao {
             team.setNumb5(num5);
             team.setNumb6(num6);
             team.setAtime1(Atime1);
-            team.setStatus1(Status1);
             session.save(team);
         } else {
-            if (session.get(User.class, teacherId).getLimit1() == 1) {
+            if ((session.get(Team.class, teacherId).getTeacherId() == teacherId)
+                    || (session.get(User.class, teacherId).getLimit1() == 1)
+                    || (session.get(User.class, teacherId).getLimit1() == 2)){
+
                 Team team = session.get(Team.class, teacherId);
+                team.setTeacherId(teacherId);
                 team.setName(name);
                 team.setKind(kind);
                 team.setAllNumber(allNumber);
@@ -194,10 +513,10 @@ public class UserImpl implements UserDao {
                 team.setNumb5(num5);
                 team.setNumb6(num6);
                 team.setAtime1(Atime1);
+                team.setStatus1(Status1);
                 session.update(team);
             } else
-                System.out.println("你无权修改,请联系管理员进行修改");
-
+                System.out.println("你无权修改,请联系项目组长或管理员进行修改");
         }
         transaction.commit();
 
@@ -231,8 +550,12 @@ public class UserImpl implements UserDao {
             award.setAward(Award);
             session.save(award);
         } else {
-            if (session.get(User.class, teacherId).getLimit1() == 1) {
+            if ((session.get(Award.class, teacherId).getTeacherId() == teacherId)
+                    || (session.get(User.class, teacherId).getLimit1() == 1)
+                    || (session.get(User.class, teacherId).getLimit1() == 2)) {
+
                 Award award = session.get(Award.class, teacherId);
+                award.setTeacherId(teacherId);
                 award.setAwardName(AwardName);
                 award.setResultName(ResultName);
                 award.setUnit(Unit);
@@ -253,7 +576,9 @@ public class UserImpl implements UserDao {
                 award.setAward(Award);
                 session.update(award);
             } else
-                System.out.println("你无权修改,请联系管理员进行修改");
+                System.out.println("你无权修改,请联系项目组长或管理员进行修改");
+
+
         }
         transaction.commit();
     }
@@ -283,8 +608,12 @@ public class UserImpl implements UserDao {
             lunWen.setPublicationRange(PublicationRange);
             session.save(lunWen);
         } else {
-            if (session.get(User.class, teacherId).getLimit1() == 1) {
+            if ((session.get(LunWen.class, teacherId).getTeacherId() == teacherId)
+                    || (session.get(User.class, teacherId).getLimit1() == 1)
+                    || (session.get(User.class, teacherId).getLimit1() == 2)) {
+
                 LunWen lunWen = session.get(LunWen.class, teacherId);
+                lunWen.setTeacherId(teacherId);
                 lunWen.setTitle(Title);
                 lunWen.setKind(Kind);
                 lunWen.setSTime(STime);
@@ -302,7 +631,9 @@ public class UserImpl implements UserDao {
                 lunWen.setPublicationRange(PublicationRange);
                 session.update(lunWen);
             } else
-                System.out.println("你无权修改,请联系管理员进行修改");
+                System.out.println("你无权修改,请联系项目组长或管理员进行修改");
+
+
         }
         transaction.commit();
     }
@@ -331,8 +662,11 @@ public class UserImpl implements UserDao {
             dProject.setMoney2(Money2);
             session.save(dProject);
         } else {
-            if (session.get(User.class, teacherId).getLimit1() == 1) {
+            if ((session.get(DProject.class, teacherId).getTeacherId() == teacherId)
+                    || (session.get(User.class, teacherId).getLimit1() == 1)
+                    || (session.get(User.class, teacherId).getLimit1() == 2)) {
                 DProject dProject = session.get(DProject.class, teacherId);
+                dProject.setTeacherId(teacherId);
                 dProject.setID(ID);
                 dProject.setResultName(ResultName);
                 dProject.setUnit(Unit);
@@ -349,7 +683,9 @@ public class UserImpl implements UserDao {
                 dProject.setMoney2(Money2);
                 session.update(dProject);
             } else
-                System.out.println("你无权修改,请联系管理员进行修改");
+                System.out.println("你无权修改,请联系项目组长或管理员进行修改");
+
+
         }
 
         transaction.commit();
@@ -371,8 +707,12 @@ public class UserImpl implements UserDao {
             art.setSchool(School);
             session.save(art);
         } else {
-            if (session.get(User.class, teacherId).getLimit1() == 1) {
+            if ((session.get(Art.class, teacherId).getTeacherId() == teacherId)
+                    || (session.get(User.class, teacherId).getLimit1() == 1)
+                    || (session.get(User.class, teacherId).getLimit1() == 2)) {
+
                 Art art = session.get(Art.class, teacherId);
+                art.setTeacherId(teacherId);
                 art.setResultName(ResultName);
                 art.setUnit(Unit);
                 art.setSTime(STime);
@@ -382,7 +722,9 @@ public class UserImpl implements UserDao {
                 art.setSchool(School);
                 session.update(art);
             } else
-                System.out.println("你无权修改,请联系管理员进行修改");
+                System.out.println("你无权修改,请联系项目组长或管理员进行修改");
+
+
         }
 
         transaction.commit();
@@ -414,8 +756,11 @@ public class UserImpl implements UserDao {
             book.setIntroduction(Introduction);
             session.save(book);
         } else {
-            if (session.get(User.class, teacherId).getLimit1() == 1) {
+            if ((session.get(Book.class, teacherId).getTeacherId() == teacherId)
+                    || (session.get(User.class, teacherId).getLimit1() == 1)
+                    || (session.get(User.class, teacherId).getLimit1() == 2)) {
                 Book book = session.get(Book.class, teacherId);
+                book.setTeacherId(teacherId);
                 book.setName(Name);
                 book.setUnit(Unit);
                 book.setPublishUnit(PublishUnit);
@@ -435,7 +780,8 @@ public class UserImpl implements UserDao {
                 book.setIntroduction(Introduction);
                 session.update(book);
             } else
-                System.out.println("你无权修改,请联系管理员进行修改");
+                System.out.println("你无权修改,请联系项目组长或管理员进行修改");
+
         }
 
         transaction.commit();
@@ -458,8 +804,11 @@ public class UserImpl implements UserDao {
             law.setOneStudy(OneStudy);
             session.save(law);
         } else {
-            if (session.get(User.class, teacherId).getLimit1() == 1) {
+            if ((session.get(Law.class, teacherId).getTeacherId() == teacherId)
+                    || (session.get(User.class, teacherId).getLimit1() == 1)
+                    || (session.get(User.class, teacherId).getLimit1() == 2)) {
                 Law law = session.get(Law.class, teacherId);
+                law.setTeacherId(teacherId);
                 law.setName(Name);
                 law.setID(ID);
                 law.setUnit(Unit);
@@ -470,10 +819,407 @@ public class UserImpl implements UserDao {
                 law.setOneStudy(OneStudy);
                 session.update(law);
             } else
-                System.out.println("你无权修改,请联系管理员进行修改");
+                System.out.println("你无权修改,请联系项目组长或管理员进行修改");
         }
 
         transaction.commit();
+    }
+//----------------------
+
+    @Override
+    public void PRRuleData(String teacherId, int ID, String Kind, String Name, String Sex, String Education, String Job, String Unit, int Contribution) {
+        Session session = hibernateutils.openSession();
+        Transaction transaction = session.beginTransaction();
+        if (session.get(PRRule.class, teacherId) == null) {
+            PRRule prRule = new PRRule();
+            prRule.setTeacherId(teacherId);
+            prRule.setID(ID);
+            prRule.setKind(Kind);
+            prRule.setSex(Sex);
+            prRule.setEducation(Education);
+            prRule.setJob(Job);
+            prRule.setUnit(Unit);
+            prRule.setContribution(Contribution);
+            session.save(prRule);
+        } else {
+            if ((session.get(PRRule.class, teacherId).getTeacherId() == teacherId)
+                    || (session.get(User.class, teacherId).getLimit1() == 1)
+                    || (session.get(User.class, teacherId).getLimit1() == 2)) {
+                PRRule prRule = session.get(PRRule.class, teacherId);
+                prRule.setTeacherId(teacherId);
+                prRule.setID(ID);
+                prRule.setKind(Kind);
+                prRule.setSex(Sex);
+                prRule.setEducation(Education);
+                prRule.setJob(Job);
+                prRule.setUnit(Unit);
+                prRule.setContribution(Contribution);
+                session.update(prRule);
+            } else
+                System.out.println("你无权修改,请联系项目组长或管理员进行修改");
+
+        }
+
+        transaction.commit();
+
+    }
+
+    @Override
+    public void RRuleData(String teacherId, String Name, String Unit, String kind, String Id, String STime, String ETime, String Ifexist, String Department, String Industry) {
+        Session session = hibernateutils.openSession();
+        Transaction transaction = session.beginTransaction();
+        if (session.get(RRule.class, teacherId) == null) {
+            RRule rRule = new RRule();
+            rRule.setTeacherId(teacherId);
+            rRule.setName(Name);
+            rRule.setUnit(Unit);
+            rRule.setKind(kind);
+            rRule.setId(Id);
+            rRule.setSTime(STime);
+            rRule.setETime(ETime);
+            rRule.setIfExist(Ifexist);
+            rRule.setDeparment(Department);
+            rRule.setIndustry(Industry);
+            session.save(rRule);
+        } else {
+            if ((session.get(RRule.class, teacherId).getTeacherId() == teacherId)
+                    || (session.get(User.class, teacherId).getLimit1() == 1)
+                    || (session.get(User.class, teacherId).getLimit1() == 2)) {
+                RRule rRule = session.get(RRule.class, teacherId);
+                rRule.setTeacherId(teacherId);
+                rRule.setName(Name);
+                rRule.setUnit(Unit);
+                rRule.setKind(kind);
+                rRule.setId(Id);
+                rRule.setSTime(STime);
+                rRule.setETime(ETime);
+                rRule.setIfExist(Ifexist);
+                rRule.setDeparment(Department);
+                rRule.setIndustry(Industry);
+                session.update(rRule);
+            } else
+                System.out.println("你无权修改,请联系项目组长或管理员进行修改");
+        }
+        transaction.commit();
+
+    }
+
+    @Override
+    public void PAwardData(String teacherId, int ID, String Kind, String Name, String Sex, String Education, String Job, String Unit, int Contribution) {
+        Session session = hibernateutils.openSession();
+        Transaction transaction = session.beginTransaction();
+        if (session.get(PAward.class, teacherId) == null) {
+            PAward pAward = new PAward();
+            pAward.setTeacherId(teacherId);
+            pAward.setID(ID);
+            pAward.setKind(Kind);
+            pAward.setSex(Sex);
+            pAward.setEducation(Education);
+            pAward.setJob(Job);
+            pAward.setUnit(Unit);
+            pAward.setContribution(Contribution);
+            session.save(pAward);
+        } else {
+            if ((session.get(PAward.class, teacherId).getTeacherId() == teacherId)
+                    || (session.get(User.class, teacherId).getLimit1() == 1)
+                    || (session.get(User.class, teacherId).getLimit1() == 2)) {
+                PAward pAward = session.get(PAward.class, teacherId);
+                pAward.setTeacherId(teacherId);
+                pAward.setID(ID);
+                pAward.setKind(Kind);
+                pAward.setSex(Sex);
+                pAward.setEducation(Education);
+                pAward.setJob(Job);
+                pAward.setUnit(Unit);
+                pAward.setContribution(Contribution);
+                session.update(pAward);
+            } else
+                System.out.println("你无权修改,请联系项目组长或管理员进行修改");
+        }
+
+        transaction.commit();
+    }
+
+    @Override
+    public void IdentifyData(String teacherId, String ResultName, String Unit, String Department, String STime, String Level, String CompleteWay, String StudyType, String OneStudy, String TwoStudy, String ProjectSource, String School, String CompleteUnit, String ID, String Conclusion) {
+        Session session = hibernateutils.openSession();
+        Transaction transaction = session.beginTransaction();
+        if (session.get(Identify.class, teacherId) == null) {
+            Identify identify = new Identify();
+            identify.setTeacherId(teacherId);
+            identify.setResultName(ResultName);
+            identify.setUnit(Unit);
+            identify.setDepartment(Department);
+            identify.setSTime(STime);
+            identify.setLevel(Level);
+            identify.setCompleteWay(CompleteWay);
+            identify.setStudyType(StudyType);
+            identify.setOneStudy(OneStudy);
+            identify.setTwoStudy(TwoStudy);
+            identify.setProjectSource(ProjectSource);
+            identify.setSchool(School);
+            identify.setCompleteUnit(CompleteUnit);
+            identify.setID(ID);
+            identify.setConclusion(Conclusion);
+            session.save(identify);
+        } else {
+            if ((session.get(Identify.class, teacherId).getTeacherId() == teacherId)
+                    || (session.get(User.class, teacherId).getLimit1() == 1)
+                    || (session.get(User.class, teacherId).getLimit1() == 2)) {
+                Identify identify = session.get(Identify.class, teacherId);
+                identify.setResultName(ResultName);
+                identify.setTeacherId(teacherId);
+                identify.setUnit(Unit);
+                identify.setDepartment(Department);
+                identify.setSTime(STime);
+                identify.setLevel(Level);
+                identify.setCompleteWay(CompleteWay);
+                identify.setStudyType(StudyType);
+                identify.setOneStudy(OneStudy);
+                identify.setTwoStudy(TwoStudy);
+                identify.setProjectSource(ProjectSource);
+                identify.setSchool(School);
+                identify.setCompleteUnit(CompleteUnit);
+                identify.setID(ID);
+                identify.setConclusion(Conclusion);
+                session.update(identify);
+
+            } else
+                System.out.println("你无权修改,请联系项目组长或管理员进行修改");
+        }
+        transaction.commit();
+    }
+
+    @Override
+    public void PIdentifyData(String teacherId, int ID, String Kind, String Name, String Sex, String Education, String Job, String Unit, int Contribution) {
+        Session session = hibernateutils.openSession();
+        Transaction transaction = session.beginTransaction();
+        if (session.get(PIdentify.class, teacherId) == null) {
+            PIdentify pIdentify = new PIdentify();
+            pIdentify.setTeacherId(teacherId);
+            pIdentify.setID(ID);
+            pIdentify.setKind(Kind);
+            pIdentify.setSex(Sex);
+            pIdentify.setEducation(Education);
+            pIdentify.setJob(Job);
+            pIdentify.setUnit(Unit);
+            pIdentify.setContribution(Contribution);
+            session.save(pIdentify);
+        } else {
+            if ((session.get(PIdentify.class, teacherId).getTeacherId() == teacherId)
+                    || (session.get(User.class, teacherId).getLimit1() == 1)
+                    || (session.get(User.class, teacherId).getLimit1() == 2)) {
+                PIdentify pIdentify = session.get(PIdentify.class, teacherId);
+                pIdentify.setTeacherId(teacherId);
+                pIdentify.setID(ID);
+                pIdentify.setKind(Kind);
+                pIdentify.setSex(Sex);
+                pIdentify.setEducation(Education);
+                pIdentify.setJob(Job);
+                pIdentify.setUnit(Unit);
+                pIdentify.setContribution(Contribution);
+                session.update(pIdentify);
+            } else
+                System.out.println("你无权修改,请联系项目组长或管理员进行修改");
+        }
+
+        transaction.commit();
+    }
+
+    @Override
+    public void PDProjectData(String teacherId, int ID, String Kind, String Name, String Sex, String Education, String Job, String Unit, int Contribution) {
+        Session session = hibernateutils.openSession();
+        Transaction transaction = session.beginTransaction();
+        if (session.get(PDProject.class, teacherId) == null) {
+            PDProject pdProject = new PDProject();
+            pdProject.setTeacherId(teacherId);
+            pdProject.setID(ID);
+            pdProject.setKind(Kind);
+            pdProject.setName(Name);
+            pdProject.setSex(Sex);
+            pdProject.setEducation(Education);
+            pdProject.setJob(Job);
+            pdProject.setUnit(Unit);
+            pdProject.setContribution(Contribution);
+            session.save(pdProject);
+        } else {
+            if ((session.get(PDProject.class, teacherId).getTeacherId() == teacherId)
+                    || (session.get(User.class, teacherId).getLimit1() == 1)
+                    || (session.get(User.class, teacherId).getLimit1() == 2)) {
+                PDProject pdProject = session.get(PDProject.class, teacherId);
+                pdProject.setTeacherId(teacherId);
+                pdProject.setID(ID);
+                pdProject.setKind(Kind);
+                pdProject.setName(Name);
+                pdProject.setSex(Sex);
+                pdProject.setEducation(Education);
+                pdProject.setJob(Job);
+                pdProject.setUnit(Unit);
+                pdProject.setContribution(Contribution);
+                session.update(pdProject);
+            } else
+                System.out.println("你无权修改,请联系项目组长或管理员进行修改");
+        }
+
+        transaction.commit();
+    }
+
+    @Override
+    public void PArtData(String teacherId, int ID, String Kind, String Name, String Sex, String Education, String Job, String Unit, int Contribution) {
+        Session session = hibernateutils.openSession();
+        Transaction transaction = session.beginTransaction();
+        if (session.get(PArt.class, teacherId) == null) {
+            PArt pArt = new PArt();
+            pArt.setTeacherId(teacherId);
+            pArt.setID(ID);
+            pArt.setKind(Kind);
+            pArt.setName(Name);
+            pArt.setSex(Sex);
+            pArt.setEducation(Education);
+            pArt.setJob(Job);
+            pArt.setUnit(Unit);
+            pArt.setContribution(Contribution);
+            session.save(pArt);
+        } else {
+            if ((session.get(PArt.class, teacherId).getTeacherId() == teacherId)
+                    || (session.get(User.class, teacherId).getLimit1() == 1)
+                    || (session.get(User.class, teacherId).getLimit1() == 2)) {
+                PArt pArt = session.get(PArt.class, teacherId);
+                pArt.setTeacherId(teacherId);
+                pArt.setID(ID);
+                pArt.setKind(Kind);
+                pArt.setName(Name);
+                pArt.setSex(Sex);
+                pArt.setEducation(Education);
+                pArt.setJob(Job);
+                pArt.setUnit(Unit);
+                pArt.setContribution(Contribution);
+                session.update(pArt);
+            } else
+                System.out.println("你无权修改,请联系项目组长或管理员进行修改");
+        }
+
+        transaction.commit();
+    }
+
+    @Override
+    public void PBookData(String teacherId, int ID, String Kind, String Name, String Sex, String Education, String Job, String Unit, int Contribution, String Role, int Count) {
+        Session session = hibernateutils.openSession();
+        Transaction transaction = session.beginTransaction();
+        if (session.get(PBook.class, teacherId) == null) {
+            PBook pBook = new PBook();
+            pBook.setTeacherId(teacherId);
+            pBook.setID(ID);
+            pBook.setKind(Kind);
+            pBook.setName(Name);
+            pBook.setSex(Sex);
+            pBook.setEducation(Education);
+            pBook.setJob(Job);
+            pBook.setUnit(Unit);
+            pBook.setContribution(Contribution);
+            pBook.setWRole(Role);
+            pBook.setCount(Count);
+            session.save(pBook);
+        } else {
+            if ((session.get(PBook.class, teacherId).getTeacherId() == teacherId)
+                    || (session.get(User.class, teacherId).getLimit1() == 1)
+                    || (session.get(User.class, teacherId).getLimit1() == 2)) {
+                PBook pBook = session.get(PBook.class, teacherId);
+                pBook.setTeacherId(teacherId);
+                pBook.setID(ID);
+                pBook.setKind(Kind);
+                pBook.setName(Name);
+                pBook.setSex(Sex);
+                pBook.setEducation(Education);
+                pBook.setJob(Job);
+                pBook.setUnit(Unit);
+                pBook.setContribution(Contribution);
+                pBook.setWRole(Role);
+                pBook.setCount(Count);
+                session.update(pBook);
+            } else
+                System.out.println("你无权修改,请联系项目组长或管理员进行修改");
+
+        }
+
+        transaction.commit();
+    }
+
+    @Override
+    public void PLawData(String teacherId, int ID, String Kind, String Name, String Sex, String Education, String Job, String Unit, int Contribution) {
+        Session session = hibernateutils.openSession();
+        Transaction transaction = session.beginTransaction();
+        if (session.get(PLaw.class, teacherId) == null) {
+            PLaw pLaw = new PLaw();
+            pLaw.setTeacherId(teacherId);
+            pLaw.setID(ID);
+            pLaw.setKind(Kind);
+            pLaw.setName(Name);
+            pLaw.setSex(Sex);
+            pLaw.setEducation(Education);
+            pLaw.setJob(Job);
+            pLaw.setUnit(Unit);
+            pLaw.setContribution(Contribution);
+            session.save(pLaw);
+        } else {
+            if ((session.get(PLaw.class, teacherId).getTeacherId() == teacherId)
+                    || (session.get(User.class, teacherId).getLimit1() == 1)
+                    || (session.get(User.class, teacherId).getLimit1() == 2)) {
+                PLaw pLaw = session.get(PLaw.class, teacherId);
+                pLaw.setTeacherId(teacherId);
+                pLaw.setID(ID);
+                pLaw.setKind(Kind);
+                pLaw.setName(Name);
+                pLaw.setSex(Sex);
+                pLaw.setEducation(Education);
+                pLaw.setJob(Job);
+                pLaw.setUnit(Unit);
+                pLaw.setContribution(Contribution);
+                session.update(pLaw);
+            } else
+                System.out.println("你无权修改,请联系项目组长或管理员进行修改");
+
+        }
+
+        transaction.commit();
+    }
+
+    @Override
+    public void PLunWenData(String teacherId, int ID, String Kind, String Name, String Sex, String Education, String Job, String Unit, int Contribution, String IfTell) {
+        Session session = hibernateutils.openSession();
+        Transaction transaction = session.beginTransaction();
+        if (session.get(PLunWen.class, teacherId) == null) {
+            PLunWen pLunWen = new PLunWen();
+            pLunWen.setTeacherId(teacherId);
+            pLunWen.setID(ID);
+            pLunWen.setKind(Kind);
+            pLunWen.setSex(Sex);
+            pLunWen.setEducation(Education);
+            pLunWen.setJob(Job);
+            pLunWen.setUnit(Unit);
+            pLunWen.setContribution(Contribution);
+            pLunWen.setIfTell(IfTell);
+            session.save(pLunWen);
+        } else {
+            if ((session.get(User.class, teacherId).getTeacherId() == teacherId)
+                    || (session.get(User.class, teacherId).getLimit1() == 1)
+                    || (session.get(User.class, teacherId).getLimit1() == 2)) {
+                PLunWen pLunWen = session.get(PLunWen.class, teacherId);
+                pLunWen.setTeacherId(teacherId);
+                pLunWen.setID(ID);
+                pLunWen.setKind(Kind);
+                pLunWen.setSex(Sex);
+                pLunWen.setEducation(Education);
+                pLunWen.setJob(Job);
+                pLunWen.setUnit(Unit);
+                pLunWen.setIfTell(IfTell);
+                pLunWen.setContribution(Contribution);
+                session.update(pLunWen);
+            } else
+                System.out.println("你无权修改,请联系项目组长或管理员进行修改");
+
+            transaction.commit();
+        }
     }
 
     @Override
@@ -481,17 +1227,7 @@ public class UserImpl implements UserDao {
         Session session = hibernateutils.openSession();
         Transaction transaction = session.beginTransaction();
 
-        if ((session.get(User.class, teacherId)) != null && (session.get(PArt.class, teacherId)) != null) {
-            User user = session.get(User.class, teacherId);
-            PArt pArt = session.get(PArt.class, teacherId);
-            int sum = user.getCount() + pArt.getContribution();
-            System.out.println(sum);
-        } else {
-/*            User user = session.get(User.class, teacherId);
-            user.setCount(0);
-            session.save(user);*/
-            System.out.println("无任何项目绩点");
-        }
+
         transaction.commit();
     }
 }

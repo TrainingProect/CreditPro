@@ -2,34 +2,17 @@ package model;
 
 public class PBook {
 
-    @Override
-    public String toString() {
-        return "PBook{" +
-                "teacherId='" + teacherId + '\'' +
-                ", ID=" + ID +
-                ", Sex='" + Sex + '\'' +
-                ", Contribution=" + Contribution +
-                ", Count=" + Count +
-                ", Kind='" + Kind + '\'' +
-                ", Name='" + Name + '\'' +
-                ", Education='" + Education + '\'' +
-                ", Job='" + Job + '\'' +
-                ", Unit='" + Unit + '\'' +
-                ", WRole='" + WRole + '\'' +
-                '}';
-    }
-
     private String teacherId;
     private int ID;   //署名顺序
-    private String Sex;   //性别
-    private int Contribution; //贡献率
-    private int Count; //参编字数
-    private String Kind; //作者类型
     private String Name; //作者姓名
+    private String Sex;   //性别
+    private String Kind; //作者类型
     private String Education; //学历
     private String Job; //职称
     private String Unit; //工作单位
     private String WRole; //承担角色
+    private int Count; //参编字数
+    private int Contribution; //贡献率
 
     public String getTeacherId() {
         return teacherId;
@@ -117,5 +100,21 @@ public class PBook {
 
     public void setWRole(String WRole) {
         this.WRole = WRole;
+    }
+
+    @Override
+    public String toString() {
+        return "PBook{" +
+                "ID=" + ID +
+                ", Name='" + Name + '\'' +
+                ", Sex='" + Sex + '\'' +
+                ", Kind='" + Kind + '\'' +
+                ", Education='" + Education + '\'' +
+                ", Job='" + Job + '\'' +
+                ", Unit='" + Unit + '\'' +
+                ", WRole='" + WRole + '\'' +
+                ", Count=" + Count +
+                ", Contribution=" + Contribution +
+                '}';
     }
 }

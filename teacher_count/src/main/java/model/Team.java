@@ -4,25 +4,8 @@ import java.io.Serializable;
 
 public class Team implements Serializable{
 
-	@Override
-	public String toString() {
-		return "Team{" +
-				"teacherId='" + teacherId + '\'' +
-				", name='" + name + '\'' +
-				", kind='" + kind + '\'' +
-				", allNumber='" + allNumber + '\'' +
-				", numb1='" + numb1 + '\'' +
-				", numb2='" + numb2 + '\'' +
-				", numb3='" + numb3 + '\'' +
-				", numb4='" + numb4 + '\'' +
-				", numb5='" + numb5 + '\'' +
-				", numb6='" + numb6 + '\'' +
-				", Atime1='" + Atime1 + '\'' +
-				", Status1='" + Status1 + '\'' +
-				'}';
-	}
 
-	private String teacherId;
+	private String teacherId;   //组长工号
 	private String name;   //成果名称
 	private String kind;   //成果类别
 	private String allNumber;    //小组成员
@@ -129,5 +112,22 @@ public class Team implements Serializable{
 
 	public void setAtime1(String atime1) {
 		Atime1 = atime1;
+	}
+
+	@Override
+	public String toString() {
+		return "Team{" +
+				"name='" + name + '\'' +
+				", kind='" + kind + '\'' +
+				", allNumber='" + allNumber + '\'' +
+				", numb1='" + numb1 + '\'' +
+				", numb2='" + numb2 + '\'' +
+				", numb3='" + numb3 + '\'' +
+				", numb4='" + numb4 + '\'' +
+				", numb5='" + numb5 + '\'' +
+				", numb6='" + numb6 + '\'' +
+				", Atime1='" + Atime1 + '\'' +
+				", Status1='" + Status1 + '\'' +
+				'}';
 	}
 }

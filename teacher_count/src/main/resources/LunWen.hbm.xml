@@ -6,12 +6,12 @@
     <!-- 建立类与表的映射 -->
     <class name="model.LunWen" table="lunwen">
         <!-- 建立类中的属性与表中的主键对应 -->
-        <id name="teacherId" column="teacherId" >
+        <id name="Title" column="Title" >
             <generator class="assigned"/>
         </id>
 
         <!-- 建立类中的普通的属性和表的字段的对应 -->
-        <property name="Title"/>
+        <property name="teacherId"/>
         <property name="Kind"/>
         <property name="STime"/>
         <property name="PublicationName"/>

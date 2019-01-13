@@ -2,6 +2,16 @@ package model;
 
 public class PIdentify {
 
+    private String teacherId;
+    private int ID;   //署名顺序
+    private String Name; //完成人姓名
+    private String Sex;   //性别
+    private String Kind; //作者类型
+    private String Education; //学历
+    private String Job; //职称
+    private String Unit; //工作单位
+    private int Contribution; //贡献率
+
     public String getTeacherId() {
         return teacherId;
     }
@@ -77,26 +87,14 @@ public class PIdentify {
     @Override
     public String toString() {
         return "PIdentify{" +
-                "teacherId='" + teacherId + '\'' +
-                ", ID=" + ID +
-                ", Sex='" + Sex + '\'' +
-                ", Contribution=" + Contribution +
-                ", Kind='" + Kind + '\'' +
+                "ID=" + ID +
                 ", Name='" + Name + '\'' +
+                ", Sex='" + Sex + '\'' +
+                ", Kind='" + Kind + '\'' +
                 ", Education='" + Education + '\'' +
                 ", Job='" + Job + '\'' +
                 ", Unit='" + Unit + '\'' +
+                ", Contribution=" + Contribution +
                 '}';
     }
-
-    private String teacherId;
-    private int ID;   //署名顺序
-    private String Kind; //作者类型
-    private String Name; //完成人姓名
-    private String Sex;   //性别
-    private String Education; //学历
-    private String Job; //职称
-    private String Unit; //工作单位
-    private int Contribution; //贡献率
-
 }

@@ -2,28 +2,15 @@ package model;
 
 public class User {
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "password='" + password + '\'' +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                ", phone='" + phone + '\'' +
-                ", teacherId='" + teacherId + '\'' +
-                ", post='" + post + '\'' +
-                ", count=" + count +
-                ", limit1=" + limit1 +
-                '}';
-    }
 
-    private String password;
-    private String name;
-    private int age;
-    private String phone;
-    private String teacherId;
-    private String post;
-    private int count;
-    private int limit1;
+    private String teacherId;   //工号
+    private String name;   //教师姓名
+    private int age;    //教师年龄
+    private String phone;   //预留手机号
+    private String post;   //所属学院
+    private int count;   //绩点
+    private int limit1;   //权限
+    private String password;  //密码
 
     public String getPassword() {
         return password;
@@ -87,5 +74,18 @@ public class User {
 
     public void setLimit1(int limit1) {
         this.limit1 = limit1;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "teacherId='" + teacherId + '\'' +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", phone='" + phone + '\'' +
+                ", post='" + post + '\'' +
+                ", count=" + count +
+                ", limit1=" + limit1 +
+                '}';
     }
 }

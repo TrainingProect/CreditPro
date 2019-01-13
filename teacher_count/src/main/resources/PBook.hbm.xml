@@ -6,20 +6,20 @@
     <!-- 建立类与表的映射 -->
     <class name="model.PBook" table="pbook">
         <!-- 建立类中的属性与表中的主键对应 -->
-        <id name="teacherId" column="teacherId" >
+        <id name="ID" column="ID" >
             <generator class="assigned"/>
         </id>
 
         <!-- 建立类中的普通的属性和表的字段的对应 -->
         <property name="Name"/>
-        <property name="ID" />
+        <property name="teacherId" />
         <property name="Sex"/>
-        <property name="Contribution" />
         <property name="Kind" />
         <property name="Education"/>
         <property name="Job" />
         <property name="Unit"/>
-        <property name="Count" />
         <property name="WRole" />
+        <property name="Count" />
+        <property name="Contribution" />
     </class>
 </hibernate-mapping>

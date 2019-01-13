@@ -6,7 +6,7 @@
     <!-- 建立类与表的映射 -->
     <class name="model.Award" table="award">
         <!-- 建立类中的属性与表中的主键对应 -->
-        <id name="teacherId" column="teacherId" >
+        <id name="AwardID" column="AwardID">
             <generator class="assigned"/>
         </id>
 
@@ -22,7 +22,7 @@
         <property name="CompleteUnit"/>
         <property name="CompleteNumber"/>
         <property name="UnitLevel"/>
-        <property name="AwardID"/>
+        <property name="teacherId" />
         <property name="StudyType"/>
         <property name="OneStudy"/>
         <property name="ProjectSource"/>

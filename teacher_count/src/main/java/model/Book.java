@@ -3,30 +3,6 @@ package model;
 import java.util.Date;
 
 public class Book {
-    @Override
-    public String toString() {
-        return "Book{" +
-                "teacherId='" + teacherId + '\'' +
-                ", Name='" + Name + '\'' +
-                ", Unit='" + Unit + '\'' +
-                ", PublishUnit='" + PublishUnit + '\'' +
-                ", StartTime='" + StartTime + '\'' +
-                ", Sp='" + Sp + '\'' +
-                ", Kind='" + Kind + '\'' +
-                ", StudyType='" + StudyType + '\'' +
-                ", OneStudy='" + OneStudy + '\'' +
-                ", ProjectSource='" + ProjectSource + '\'' +
-                ", Count=" + Count +
-                ", IfTranslation='" + IfTranslation + '\'' +
-                ", School='" + School + '\'' +
-                ", Language='" + Language + '\'' +
-                ", ISBN='" + ISBN + '\'' +
-                ", CIP='" + CIP + '\'' +
-                ", Level='" + Level + '\'' +
-                ", IfAid='" + IfAid + '\'' +
-                ", Introduction='" + Introduction + '\'' +
-                '}';
-    }
 
     private String teacherId;
     private String Name;//著作名称
@@ -198,5 +174,29 @@ public class Book {
 
     public void setIntroduction(String introduction) {
         Introduction = introduction;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "Name='" + Name + '\'' +
+                ", Unit='" + Unit + '\'' +
+                ", PublishUnit='" + PublishUnit + '\'' +
+                ", StartTime='" + StartTime + '\'' +
+                ", Sp='" + Sp + '\'' +
+                ", Kind='" + Kind + '\'' +
+                ", StudyType='" + StudyType + '\'' +
+                ", OneStudy='" + OneStudy + '\'' +
+                ", ProjectSource='" + ProjectSource + '\'' +
+                ", Count=" + Count +
+                ", IfTranslation='" + IfTranslation + '\'' +
+                ", School='" + School + '\'' +
+                ", Language='" + Language + '\'' +
+                ", ISBN='" + ISBN + '\'' +
+                ", CIP='" + CIP + '\'' +
+                ", Level='" + Level + '\'' +
+                ", IfAid='" + IfAid + '\'' +
+                ", Introduction='" + Introduction + '\'' +
+                '}';
     }
 }

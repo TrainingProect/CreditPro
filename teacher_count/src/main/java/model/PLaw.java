@@ -2,6 +2,17 @@ package model;
 
 public class PLaw {
 
+    private String teacherId;
+    private int ID;   //署名顺序
+    private String Name; //作者姓名
+    private String Sex;   //性别
+    private String Kind; //作者类型
+    private String Education; //学历
+    private String Job; //职称
+    private String Unit; //工作单位
+    private int Contribution; //贡献率
+
+
     public String getTeacherId() {
         return teacherId;
     }
@@ -74,28 +85,17 @@ public class PLaw {
         Unit = unit;
     }
 
-    private String teacherId;
-    private int ID;   //署名顺序
-    private String Sex;   //性别
-    private int Contribution; //贡献率
-    private String Kind; //作者类型
-    private String Name; //作者姓名
-    private String Education; //学历
-    private String Job; //职称
-    private String Unit; //工作单位
-
     @Override
     public String toString() {
         return "PLaw{" +
-                "teacherId='" + teacherId + '\'' +
-                ", ID=" + ID +
-                ", Sex='" + Sex + '\'' +
-                ", Contribution=" + Contribution +
-                ", Kind='" + Kind + '\'' +
+                "ID=" + ID +
                 ", Name='" + Name + '\'' +
+                ", Sex='" + Sex + '\'' +
+                ", Kind='" + Kind + '\'' +
                 ", Education='" + Education + '\'' +
                 ", Job='" + Job + '\'' +
                 ", Unit='" + Unit + '\'' +
+                ", Contribution=" + Contribution +
                 '}';
     }
 }

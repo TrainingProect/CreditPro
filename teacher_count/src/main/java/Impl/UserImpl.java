@@ -84,9 +84,9 @@ public class UserImpl implements UserDao {
         criteria.add(Restrictions.or(Restrictions.eq("numb5", name)));
         criteria.add(Restrictions.or(Restrictions.eq("numb6", name)));
         List<Team> list = criteria.list();
-        for (Team team : list){
+        for (Team team : list) {
             //根据小组组长Id来查看本组的相关表信息
-            String id=team.getTeacherId();
+            String id = team.getTeacherId();
             Criteria criteria1 = session.createCriteria(RRule.class);
             criteria1.add(Restrictions.eq("teacherId", id));
             List<RRule> list1 = criteria1.list();
@@ -111,9 +111,9 @@ public class UserImpl implements UserDao {
         criteria.add(Restrictions.or(Restrictions.eq("numb5", name)));
         criteria.add(Restrictions.or(Restrictions.eq("numb6", name)));
         List<Team> list = criteria.list();
-        for (Team team : list){
+        for (Team team : list) {
             //根据小组组长Id来查看本组的相关表信息
-            String id=team.getTeacherId();
+            String id = team.getTeacherId();
             Criteria criteria1 = session.createCriteria(Award.class);
             criteria1.add(Restrictions.eq("teacherId", id));
             List<Award> list1 = criteria1.list();
@@ -137,9 +137,9 @@ public class UserImpl implements UserDao {
         criteria.add(Restrictions.or(Restrictions.eq("numb5", name)));
         criteria.add(Restrictions.or(Restrictions.eq("numb6", name)));
         List<Team> list = criteria.list();
-        for (Team team : list){
+        for (Team team : list) {
             //根据小组组长Id来查看本组的相关表信息
-            String id=team.getTeacherId();
+            String id = team.getTeacherId();
             Criteria criteria1 = session.createCriteria(LunWen.class);
             criteria1.add(Restrictions.eq("teacherId", id));
             List<LunWen> list1 = criteria.list();
@@ -162,9 +162,9 @@ public class UserImpl implements UserDao {
         criteria.add(Restrictions.or(Restrictions.eq("numb5", name)));
         criteria.add(Restrictions.or(Restrictions.eq("numb6", name)));
         List<Team> list = criteria.list();
-        for (Team team : list){
+        for (Team team : list) {
             //根据小组组长Id来查看本组的相关表信息
-            String id=team.getTeacherId();
+            String id = team.getTeacherId();
             Criteria criteria1 = session.createCriteria(Identify.class);
             criteria1.add(Restrictions.eq("teacherId", id));
             List<Identify> list1 = criteria.list();
@@ -187,9 +187,9 @@ public class UserImpl implements UserDao {
         criteria.add(Restrictions.or(Restrictions.eq("numb5", name)));
         criteria.add(Restrictions.or(Restrictions.eq("numb6", name)));
         List<Team> list = criteria.list();
-        for (Team team : list){
+        for (Team team : list) {
             //根据小组组长Id来查看本组的相关表信息
-            String id=team.getTeacherId();
+            String id = team.getTeacherId();
             Criteria criteria1 = session.createCriteria(DProject.class);
             criteria1.add(Restrictions.eq("teacherId", id));
             List<DProject> list1 = criteria.list();
@@ -212,9 +212,9 @@ public class UserImpl implements UserDao {
         criteria.add(Restrictions.or(Restrictions.eq("numb5", name)));
         criteria.add(Restrictions.or(Restrictions.eq("numb6", name)));
         List<Team> list = criteria.list();
-        for (Team team : list){
+        for (Team team : list) {
             //根据小组组长Id来查看本组的相关表信息
-            String id=team.getTeacherId();
+            String id = team.getTeacherId();
             Criteria criteria1 = session.createCriteria(Art.class);
             criteria1.add(Restrictions.eq("teacherId", id));
             List<Art> list1 = criteria.list();
@@ -237,9 +237,9 @@ public class UserImpl implements UserDao {
         criteria.add(Restrictions.or(Restrictions.eq("numb5", name)));
         criteria.add(Restrictions.or(Restrictions.eq("numb6", name)));
         List<Team> list = criteria.list();
-        for (Team team : list){
+        for (Team team : list) {
             //根据小组组长Id来查看本组的相关表信息
-            String id=team.getTeacherId();
+            String id = team.getTeacherId();
             Criteria criteria1 = session.createCriteria(Book.class);
             criteria1.add(Restrictions.eq("teacherId", id));
             List<Book> list1 = criteria.list();
@@ -262,9 +262,9 @@ public class UserImpl implements UserDao {
         criteria.add(Restrictions.or(Restrictions.eq("numb5", name)));
         criteria.add(Restrictions.or(Restrictions.eq("numb6", name)));
         List<Team> list = criteria.list();
-        for (Team team : list){
+        for (Team team : list) {
             //根据小组组长Id来查看本组的相关表信息
-            String id=team.getTeacherId();
+            String id = team.getTeacherId();
             Criteria criteria1 = session.createCriteria(Law.class);
             criteria1.add(Restrictions.eq("teacherId", id));
             List<Law> list1 = criteria.list();
@@ -288,9 +288,9 @@ public class UserImpl implements UserDao {
         criteria.add(Restrictions.or(Restrictions.eq("numb5", name)));
         criteria.add(Restrictions.or(Restrictions.eq("numb6", name)));
         List<Team> list = criteria.list();
-        for (Team team : list){
+        for (Team team : list) {
             //根据小组组长Id来查看本组的相关表信息
-            String id=team.getTeacherId();
+            String id = team.getTeacherId();
             Criteria criteria1 = session.createCriteria(PAward.class);
             criteria1.add(Restrictions.eq("teacherId", id));
             List<PAward> list1 = criteria.list();
@@ -313,9 +313,9 @@ public class UserImpl implements UserDao {
         criteria.add(Restrictions.or(Restrictions.eq("numb5", name)));
         criteria.add(Restrictions.or(Restrictions.eq("numb6", name)));
         List<Team> list = criteria.list();
-        for (Team team : list){
+        for (Team team : list) {
             //根据小组组长Id来查看本组的相关表信息
-            String id=team.getTeacherId();
+            String id = team.getTeacherId();
             Criteria criteria1 = session.createCriteria(PRRule.class);
             criteria1.add(Restrictions.eq("teacherId", id));
             List<PRRule> list1 = criteria.list();
@@ -338,9 +338,9 @@ public class UserImpl implements UserDao {
         criteria.add(Restrictions.or(Restrictions.eq("numb5", name)));
         criteria.add(Restrictions.or(Restrictions.eq("numb6", name)));
         List<Team> list = criteria.list();
-        for (Team team : list){
+        for (Team team : list) {
             //根据小组组长Id来查看本组的相关表信息
-            String id=team.getTeacherId();
+            String id = team.getTeacherId();
             Criteria criteria1 = session.createCriteria(PLunWen.class);
             criteria1.add(Restrictions.eq("teacherId", id));
             List<PLunWen> list1 = criteria.list();
@@ -364,9 +364,9 @@ public class UserImpl implements UserDao {
         criteria.add(Restrictions.or(Restrictions.eq("numb5", name)));
         criteria.add(Restrictions.or(Restrictions.eq("numb6", name)));
         List<Team> list = criteria.list();
-        for (Team team : list){
+        for (Team team : list) {
             //根据小组组长Id来查看本组的相关表信息
-            String id=team.getTeacherId();
+            String id = team.getTeacherId();
             Criteria criteria1 = session.createCriteria(PIdentify.class);
             criteria1.add(Restrictions.eq("teacherId", id));
             List<PIdentify> list1 = criteria.list();
@@ -389,9 +389,9 @@ public class UserImpl implements UserDao {
         criteria.add(Restrictions.or(Restrictions.eq("numb5", name)));
         criteria.add(Restrictions.or(Restrictions.eq("numb6", name)));
         List<Team> list = criteria.list();
-        for (Team team : list){
+        for (Team team : list) {
             //根据小组组长Id来查看本组的相关表信息
-            String id=team.getTeacherId();
+            String id = team.getTeacherId();
             Criteria criteria1 = session.createCriteria(PDProject.class);
             criteria1.add(Restrictions.eq("teacherId", id));
             List<PDProject> list1 = criteria.list();
@@ -414,9 +414,9 @@ public class UserImpl implements UserDao {
         criteria.add(Restrictions.or(Restrictions.eq("numb5", name)));
         criteria.add(Restrictions.or(Restrictions.eq("numb6", name)));
         List<Team> list = criteria.list();
-        for (Team team : list){
+        for (Team team : list) {
             //根据小组组长Id来查看本组的相关表信息
-            String id=team.getTeacherId();
+            String id = team.getTeacherId();
             Criteria criteria1 = session.createCriteria(PArt.class);
             criteria1.add(Restrictions.eq("teacherId", id));
             List<PArt> list1 = criteria.list();
@@ -439,9 +439,9 @@ public class UserImpl implements UserDao {
         criteria.add(Restrictions.or(Restrictions.eq("numb5", name)));
         criteria.add(Restrictions.or(Restrictions.eq("numb6", name)));
         List<Team> list = criteria.list();
-        for (Team team : list){
+        for (Team team : list) {
             //根据小组组长Id来查看本组的相关表信息
-            String id=team.getTeacherId();
+            String id = team.getTeacherId();
             Criteria criteria1 = session.createCriteria(PBook.class);
             criteria1.add(Restrictions.eq("teacherId", id));
             List<PBook> list1 = criteria.list();
@@ -464,9 +464,9 @@ public class UserImpl implements UserDao {
         criteria.add(Restrictions.or(Restrictions.eq("numb5", name)));
         criteria.add(Restrictions.or(Restrictions.eq("numb6", name)));
         List<Team> list = criteria.list();
-        for (Team team : list){
+        for (Team team : list) {
             //根据小组组长Id来查看本组的相关表信息
-            String id=team.getTeacherId();
+            String id = team.getTeacherId();
             Criteria criteria1 = session.createCriteria(PLaw.class);
             criteria1.add(Restrictions.eq("teacherId", id));
             List<PLaw> list1 = criteria.list();
@@ -499,7 +499,7 @@ public class UserImpl implements UserDao {
         } else {
             if ((session.get(Team.class, teacherId).getTeacherId() == teacherId)
                     || (session.get(User.class, teacherId).getLimit1() == 1)
-                    || (session.get(User.class, teacherId).getLimit1() == 2)){
+                    || (session.get(User.class, teacherId).getLimit1() == 2)) {
 
                 Team team = session.get(Team.class, teacherId);
                 team.setTeacherId(teacherId);
@@ -684,8 +684,6 @@ public class UserImpl implements UserDao {
                 session.update(dProject);
             } else
                 System.out.println("你无权修改,请联系项目组长或管理员进行修改");
-
-
         }
 
         transaction.commit();
@@ -1223,11 +1221,407 @@ public class UserImpl implements UserDao {
     }
 
     @Override
-    public void Count(String teacherId) {
-        Session session = hibernateutils.openSession();
+    public void Count(String name) {
+       /* Session session = hibernateutils.openSession();
         Transaction transaction = session.beginTransaction();
+        //教研和教材业绩量化
+        //找到参与项目
+        Criteria criteria = session.createCriteria(Team.class);
+        criteria.add(Restrictions.eq("numb1", name));
+        criteria.add(Restrictions.or(Restrictions.eq("numb2", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb3", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb4", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb5", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb6", name)));
+        List<Team> list = criteria.list();
+        double sumart = 0;
+        for (Team team : list) {
+            //根据小组组长Id来查看本组的相关表信息
+            String id = team.getTeacherId();
+            //艺术作品类
+            Criteria criteria1 = session.createCriteria(Art.class);
+            criteria1.add(Restrictions.eq("teacherId", id));
+            List<Art> list1 = criteria.list();
+            for (Art art : list1) {
+                if (session.get(Art.class, id).getPublicationName() == "新华文摘（全文转载）"
+                        || session.get(Art.class, id).getPublicationName() == "中国社会科学") {
+                    if (session.get(Art.class, id).getSchool() == "第一单位") {
+                        int i = session.get(PArt.class, name).getContribution();
+                        int i = session.get(PArt.class, name).getContribution();
+                        sumart = sumart + 800 * i;
+                    } else if (session.get(Art.class, id).getSchool() == "非第一单位") {
+                        int i = session.get(PArt.class, name).getContribution();
+                        sumart = sumart + 800 * 0.3 * i;
+                    }
+                }
+                //一级期刊
+                else if (session.get(Art.class, id).getPublicationName() == "人文社会科学引文索引(SSCI)"
+                        || session.get(Art.class, id).getPublicationName() == "艺术与人文科学引文索引(A&HCI)"
+                        || session.get(Art.class, id).getPublicationName() == "三报专论"
+                        || session.get(Art.class, id).getPublicationName() == "人民日报"
+                        || session.get(Art.class, id).getPublicationName() == "光明日报"
+                        || session.get(Art.class, id).getPublicationName() == "经济日报"
+                        || session.get(Art.class, id).getPublicationName() == "求是杂志"
+                        || session.get(Art.class, id).getPublicationName() == "中国教育报理论文章") {
+                    if (session.get(Art.class, id).getSchool() == "第一单位") {
+                        int i = session.get(PArt.class, name).getContribution();
+                        sumart = sumart + 600;
+                    } else if (session.get(Art.class, id).getSchool() == "非第一单位") {
+                        int i = session.get(PArt.class, name).getContribution();
+                        sumart = sumart + 600 * 0.3 * i;
+                    }
+                }
+                //二级期刊
+                else if (session.get(Art.class, id).getPublicationName() == "文艺研究"
+                        || session.get(Art.class, id).getPublicationName() == "中央音乐学院学报"
+                        || session.get(Art.class, id).getPublicationName() == "装饰"
+                        || session.get(Art.class, id).getPublicationName() == "中国社会科学文摘(全文转载)"
+                        || session.get(Art.class, id).getPublicationName() == "高校文科学报文摘(全文转载)"
+                        || session.get(Art.class, id).getPublicationName() == "新华文摘(转载1/2以上)") {
+                    if (session.get(Art.class, id).getSchool() == "第一单位") {
+                        int i = session.get(PArt.class, name).getContribution();
+                        sumart = sumart + 400;
+                    } else if (session.get(Art.class, id).getSchool() == "非第一单位") {
+                        int i = session.get(PArt.class, name).getContribution();
+                        sumart = sumart + 400 * 0.3 * i;
+                    }
+                }
+                //三级期刊
+                else if (session.get(Art.class, id).getPublicationName() == "美术观察"
+                        || session.get(Art.class, id).getPublicationName() == " 艺术百家"
+                        || session.get(Art.class, id).getPublicationName() == "电影艺术") {
+                    if (session.get(Art.class, id).getSchool() == "第一单位") {
+                        int i = session.get(PArt.class, name).getContribution();
+                        sumart = sumart + 200;
+                    } else if (session.get(Art.class, id).getSchool() == "非第一单位") {
+                        int i = session.get(PArt.class, name).getContribution();
+                        sumart = sumart + 200 * 0.3 * i;
+                    }
+                }
+                //四级期刊
+                else if (session.get(Art.class, id).getPublicationName() == "其他CSSCI来源期刊"
+                        || session.get(Art.class, id).getPublicationName() == "中国社会科学文摘(转摘1/2以上)"
+                        || session.get(Art.class, id).getPublicationName() == "高校文科学报文摘(转摘1/2以上)"
+                        || session.get(Art.class, id).getPublicationName() == "河南日报"
+                        || session.get(Art.class, id).getPublicationName() == "中国教育报（2500字以上）"
+                        || session.get(Art.class, id).getPublicationName() == "人大复印资料(全文转载)") {
+                    if (session.get(Art.class, id).getSchool() == "第一单位") {
+                        int i = session.get(PArt.class, name).getContribution();
+                        sumart = sumart + 120;
+                    } else if (session.get(Art.class, id).getSchool() == "非第一单位") {
+                        int i = session.get(PArt.class, name).getContribution();
+                        sumart = sumart + 120 * 0.3 * i;
+                    }
+                }
+                //五级期刊
+                else if (session.get(Art.class, id).getPublicationName() == "CSSCI扩展版期刊"
+                        || session.get(Art.class, id).getPublicationName() == "CSSCI集刊"
+                        || session.get(Art.class, id).getPublicationName() == "一般外文期刊"
+                        || session.get(Art.class, id).getPublicationName() == "SCD数据库来源期刊") {
+                    if (session.get(Art.class, id).getSchool() == "第一单位") {
+                        int i = session.get(PArt.class, name).getContribution();
+                        sumart = sumart + 60;
+                    } else if (session.get(Art.class, id).getSchool() == "非第一单位") {
+                        int i = session.get(PArt.class, name).getContribution();
+                        sumart = sumart + 60 * 0.3 * i;
+                    }
+                }
+                //六级期刊
+                else if (session.get(Art.class, id).getPublicationName() == "北大中文核心期刊"
+                        || session.get(Art.class, id).getPublicationName() == "新华文摘(要点摘编)"
+                        || session.get(Art.class, id).getPublicationName() == "SCD数据库来源期刊") {
+                    if (session.get(Art.class, id).getSchool() == "第一单位") {
+                        int i = session.get(PArt.class, name).getContribution();
+                        sumart = sumart + 30;
+                    } else if (session.get(Art.class, id).getSchool() == "非第一单位") {
+                        int i = session.get(PArt.class, name).getContribution();
+                        sumart = sumart + 30 * 0.3 * i;
+                    }
+                }
+                //七级
+                else if (session.get(Art.class, id).getPublicationName() == "CPCI-SSH(ISSHP)收录"
+                        || session.get(Art.class, id).getPublicationName() == "中原工学院学报") {
+                    if (session.get(Art.class, id).getSchool() == "第一单位") {
+                        int i = session.get(PArt.class, name).getContribution();
+                        sumart = sumart + 6;
+                    } else if (session.get(Art.class, id).getSchool() == "非第一单位") {
+                        int i = session.get(PArt.class, name).getContribution();
+                        sumart = sumart + 6 * 0.3 * i;
+                    }
+                }
 
+
+            }
+            //获奖类
+            Criteria criteria3 = session.createCriteria(Award.class);
+            criteria1.add(Restrictions.eq("teacherId", id));
+            List<Award> list3 = criteria.list();
+            for (Award award : list3) {
+
+            }
+        }
 
         transaction.commit();
+    }*/
+    }
+
+    @Override
+    public void SCount(String name) {
+        Session session = hibernateutils.openSession();
+        Transaction transaction = session.beginTransaction();
+        //教研和教材业绩量化
+        //找到参与项目
+        Criteria criteria = session.createCriteria(Team.class);
+        criteria.add(Restrictions.eq("numb1", name));
+        criteria.add(Restrictions.or(Restrictions.eq("numb2", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb3", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb4", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb5", name)));
+        criteria.add(Restrictions.or(Restrictions.eq("numb6", name)));
+        List<Team> list = criteria.list();
+        double sumart = 0;
+        for (Team team : list) {
+            //根据小组组长Id来查看本组的相关表信息
+            String id = team.getTeacherId();
+            //科研项目绩点
+            if (session.get(Team.class, id).getKind() == "国家级重大")
+                sumart += 800 * 1.7;
+            else if (session.get(Team.class, id).getKind() == "国家级重点项目")
+                sumart += 400 * 1.6;
+            else if (session.get(Team.class, id).getKind() == "国家级一般项目")
+                sumart += 200 * 1.5;
+            else if (session.get(Team.class, id).getKind() == "省部级重大")
+                sumart += 60 * 1.5;
+            else if (session.get(Team.class, id).getKind() == "省部级重点项目")
+                sumart += 60 * 1.4;
+            else if (session.get(Team.class, id).getKind() == "省部级一般项目")
+                sumart += 30 * 1.2;
+            else if (session.get(Team.class, id).getKind() == "市厅级重大项目")
+                sumart += 10 * 1.1;
+            else if (session.get(Team.class, id).getKind() == "市厅级重点项目")
+                sumart += 10 * 1.1;
+            else if (session.get(Team.class, id).getKind() == "市厅级一般项目")
+                sumart += 10 * 1.1;
+            else if (session.get(Team.class, id).getKind() == "横向项目")
+                sumart += 0;
+            //科研成果业绩量化
+            //论文
+            if (session.get(PLunWen.class, id).getIfTell() == "是"
+                    && session.get(LunWen.class, id).getSchool() == "第一单位") {
+                if (session.get(LunWen.class, id).getCollection() == "EI")
+                    if (session.get(LunWen.class, id).getKind() == "中文普通期刊"
+                            || session.get(LunWen.class, id).getKind() == "中文核心期刊"
+                            || session.get(LunWen.class, id).getKind() == "外文期刊")
+                        sumart += 60 * 1;
+            } else if (session.get(PLunWen.class, id).getIfTell() == "是"
+                    && session.get(LunWen.class, id).getSchool() == "非第一单位") {
+                if (session.get(LunWen.class, id).getCollection() == "EI")
+                    if (session.get(LunWen.class, id).getKind() == "会议论文")
+                        sumart += 8 * 0.3;
+            }
+            //知识产权
+           /*
+           *
+           *
+           * */
+            //著作
+            if (session.get(Book.class, id).getLevel() == "一级"
+                    && (session.get(Book.class, id).getLanguage() == "外文"
+                    || session.get(Book.class, id).getLanguage() == "少数名族文字图书"
+                    || session.get(Book.class, id).getLanguage() == "拼音图书")
+                    && (session.get(PBook.class, id).getWRole() == "著")) {
+                sumart += (session.get(PBook.class, id).getCount() * 6 * 1.3 * 1 * 1.3) * (session.get(PBook.class, id).getContribution() / 100);
+            } else if (session.get(Book.class, id).getLevel() == "一级"
+                    && (session.get(Book.class, id).getLanguage() == "外文"
+                    || session.get(Book.class, id).getLanguage() == "少数名族文字图书"
+                    || session.get(Book.class, id).getLanguage() == "拼音图书")
+                    && (session.get(PBook.class, id).getWRole() == "编著、译著")) {
+                sumart += (session.get(PBook.class, id).getCount() * 3.5 * 1.3 * 1 * 1.3) * (session.get(PBook.class, id).getContribution() / 100);
+            } else if (session.get(Book.class, id).getLevel() == "一级"
+                    && (session.get(Book.class, id).getLanguage() == "外文"
+                    || session.get(Book.class, id).getLanguage() == "少数名族文字图书"
+                    || session.get(Book.class, id).getLanguage() == "拼音图书")
+                    && (session.get(PBook.class, id).getWRole() == "编")) {
+                sumart += (session.get(PBook.class, id).getCount() * 1.5 * 1.3 * 1 * 1.3) * (session.get(PBook.class, id).getContribution() / 100);
+            } else if (session.get(Book.class, id).getLevel() == "二级"
+                    && (session.get(Book.class, id).getLanguage() == "外文"
+                    || session.get(Book.class, id).getLanguage() == "少数名族文字图书"
+                    || session.get(Book.class, id).getLanguage() == "拼音图书")
+                    && (session.get(PBook.class, id).getWRole() == "著")) {
+                sumart += (session.get(PBook.class, id).getCount() * 6 * 1 * 1 * 1.3) * (session.get(PBook.class, id).getContribution() / 100);
+            } else if (session.get(Book.class, id).getLevel() == "二级"
+                    && (session.get(Book.class, id).getLanguage() == "外文"
+                    || session.get(Book.class, id).getLanguage() == "少数名族文字图书"
+                    || session.get(Book.class, id).getLanguage() == "拼音图书")
+                    && (session.get(PBook.class, id).getWRole() == "编著、译著")) {
+                sumart += (session.get(PBook.class, id).getCount() * 3.5 * 1 * 1 * 1.3) * (session.get(PBook.class, id).getContribution() / 100);
+            } else if (session.get(Book.class, id).getLevel() == "二级"
+                    && (session.get(Book.class, id).getLanguage() == "外文"
+                    || session.get(Book.class, id).getLanguage() == "少数名族文字图书"
+                    || session.get(Book.class, id).getLanguage() == "拼音图书")
+                    && (session.get(PBook.class, id).getWRole() == "编")) {
+                sumart += (session.get(PBook.class, id).getCount() * 1.5 * 1 * 1 * 1.3) * (session.get(PBook.class, id).getContribution() / 100);
+            } else if (session.get(Book.class, id).getLevel() == "三级"
+                    && (session.get(Book.class, id).getLanguage() == "外文"
+                    || session.get(Book.class, id).getLanguage() == "少数名族文字图书"
+                    || session.get(Book.class, id).getLanguage() == "拼音图书")
+                    && (session.get(PBook.class, id).getWRole() == "著")) {
+                sumart += (session.get(PBook.class, id).getCount() * 6 * 0.8 * 1 * 1.3) * (session.get(PBook.class, id).getContribution() / 100);
+            } else if (session.get(Book.class, id).getLevel() == "三级"
+                    && (session.get(Book.class, id).getLanguage() == "外文"
+                    || session.get(Book.class, id).getLanguage() == "少数名族文字图书"
+                    || session.get(Book.class, id).getLanguage() == "拼音图书")
+                    && (session.get(PBook.class, id).getWRole() == "编著、译著")) {
+                sumart += (session.get(PBook.class, id).getCount() * 3.5 * 0.8 * 1 * 1.3) * (session.get(PBook.class, id).getContribution() / 100);
+            } else if (session.get(Book.class, id).getLevel() == "三级"
+                    && (session.get(Book.class, id).getLanguage() == "外文"
+                    || session.get(Book.class, id).getLanguage() == "少数名族文字图书"
+                    || session.get(Book.class, id).getLanguage() == "拼音图书")
+                    && (session.get(PBook.class, id).getWRole() == "编")) {
+                sumart += (session.get(PBook.class, id).getCount() * 1.5 * 0.8 * 1 * 1.3) * (session.get(PBook.class, id).getContribution() / 100);
+            } else if (session.get(Book.class, id).getLevel() == "四级"
+                    && (session.get(Book.class, id).getLanguage() == "外文"
+                    || session.get(Book.class, id).getLanguage() == "少数名族文字图书"
+                    || session.get(Book.class, id).getLanguage() == "拼音图书")
+                    && (session.get(PBook.class, id).getWRole() == "著")) {
+                sumart += (session.get(PBook.class, id).getCount() * 6 * 0.5 * 1 * 1.3) * (session.get(PBook.class, id).getContribution() / 100);
+            } else if (session.get(Book.class, id).getLevel() == "四级"
+                    && (session.get(Book.class, id).getLanguage() == "外文"
+                    || session.get(Book.class, id).getLanguage() == "少数名族文字图书"
+                    || session.get(Book.class, id).getLanguage() == "拼音图书")
+                    && (session.get(PBook.class, id).getWRole() == "编著、译著")) {
+                sumart += (session.get(PBook.class, id).getCount() * 3.5 * 0.5 * 1 * 1.3) * (session.get(PBook.class, id).getContribution() / 100);
+            } else if (session.get(Book.class, id).getLevel() == "四级"
+                    && (session.get(Book.class, id).getLanguage() == "外文"
+                    || session.get(Book.class, id).getLanguage() == "少数名族文字图书"
+                    || session.get(Book.class, id).getLanguage() == "拼音图书")
+                    && (session.get(PBook.class, id).getWRole() == "编")) {
+                sumart += (session.get(PBook.class, id).getCount() * 1.5 * 0.5 * 1 * 1.3) * (session.get(PBook.class, id).getContribution() / 100);
+            } else if (session.get(Book.class, id).getLevel() == "一级"
+                    && session.get(PBook.class, id).getWRole() == "著"
+                    && (session.get(Book.class, id).getLanguage() != "外文"
+                    || session.get(Book.class, id).getLanguage() != "少数名族文字图书"
+                    || session.get(Book.class, id).getLanguage() != "拼音图书")) {
+                sumart += (session.get(PBook.class, id).getCount() * 6 * 1.3 * 1) * (session.get(PBook.class, id).getContribution() / 100);
+            } else if (session.get(Book.class, id).getLevel() == "一级"
+                    && (session.get(Book.class, id).getLanguage() == "外文"
+                    || session.get(Book.class, id).getLanguage() != "少数名族文字图书"
+                    || session.get(Book.class, id).getLanguage() != "拼音图书")
+                    && (session.get(PBook.class, id).getWRole() != "编著、译著")) {
+                sumart += (session.get(PBook.class, id).getCount() * 3.5 * 1.3 * 1) * (session.get(PBook.class, id).getContribution() / 100);
+            } else if (session.get(Book.class, id).getLevel() == "一级"
+                    && (session.get(Book.class, id).getLanguage() != "外文"
+                    || session.get(Book.class, id).getLanguage() != "少数名族文字图书"
+                    || session.get(Book.class, id).getLanguage() != "拼音图书")
+                    && (session.get(PBook.class, id).getWRole() == "编")) {
+                sumart += (session.get(PBook.class, id).getCount() * 1.5 * 1.3 * 1) * (session.get(PBook.class, id).getContribution() / 100);
+            } else if (session.get(Book.class, id).getLevel() == "二级"
+                    && (session.get(Book.class, id).getLanguage() != "外文"
+                    || session.get(Book.class, id).getLanguage() != "少数名族文字图书"
+                    || session.get(Book.class, id).getLanguage() != "拼音图书")
+                    && (session.get(PBook.class, id).getWRole() == "著")) {
+                sumart += (session.get(PBook.class, id).getCount() * 6 * 1 * 1) * (session.get(PBook.class, id).getContribution() / 100);
+            } else if (session.get(Book.class, id).getLevel() == "二级"
+                    && (session.get(Book.class, id).getLanguage() != "外文"
+                    || session.get(Book.class, id).getLanguage() != "少数名族文字图书"
+                    || session.get(Book.class, id).getLanguage() != "拼音图书")
+                    && (session.get(PBook.class, id).getWRole() == "编著、译著")) {
+                sumart += (session.get(PBook.class, id).getCount() * 3.5 * 1 * 1) * (session.get(PBook.class, id).getContribution() / 100);
+            } else if (session.get(Book.class, id).getLevel() == "二级"
+                    && (session.get(Book.class, id).getLanguage() != "外文"
+                    || session.get(Book.class, id).getLanguage() != "少数名族文字图书"
+                    || session.get(Book.class, id).getLanguage() != "拼音图书")
+                    && (session.get(PBook.class, id).getWRole() == "编")) {
+                sumart += (session.get(PBook.class, id).getCount() * 1.5 * 1 * 1) * (session.get(PBook.class, id).getContribution() / 100);
+            } else if (session.get(Book.class, id).getLevel() == "三级"
+                    && (session.get(Book.class, id).getLanguage() != "外文"
+                    || session.get(Book.class, id).getLanguage() != "少数名族文字图书"
+                    || session.get(Book.class, id).getLanguage() != "拼音图书")
+                    && (session.get(PBook.class, id).getWRole() == "著")) {
+                sumart += (session.get(PBook.class, id).getCount() * 6 * 0.8 * 1) * (session.get(PBook.class, id).getContribution() / 100);
+            } else if (session.get(Book.class, id).getLevel() == "三级"
+                    && (session.get(Book.class, id).getLanguage() != "外文"
+                    || session.get(Book.class, id).getLanguage() != "少数名族文字图书"
+                    || session.get(Book.class, id).getLanguage() != "拼音图书")
+                    && (session.get(PBook.class, id).getWRole() == "编著、译著")) {
+                sumart += (session.get(PBook.class, id).getCount() * 3.5 * 0.8 * 1) * (session.get(PBook.class, id).getContribution() / 100);
+            } else if (session.get(Book.class, id).getLevel() == "三级"
+                    && (session.get(Book.class, id).getLanguage() != "外文"
+                    || session.get(Book.class, id).getLanguage() != "少数名族文字图书"
+                    || session.get(Book.class, id).getLanguage() != "拼音图书")
+                    && (session.get(PBook.class, id).getWRole() == "编")) {
+                sumart += (session.get(PBook.class, id).getCount() * 1.5 * 0.8 * 1) * (session.get(PBook.class, id).getContribution() / 100);
+            } else if (session.get(Book.class, id).getLevel() == "四级"
+                    && (session.get(Book.class, id).getLanguage() != "外文"
+                    || session.get(Book.class, id).getLanguage() != "少数名族文字图书"
+                    || session.get(Book.class, id).getLanguage() != "拼音图书")
+                    && (session.get(PBook.class, id).getWRole() == "著")) {
+                sumart += (session.get(PBook.class, id).getCount() * 6 * 0.5 * 1) * (session.get(PBook.class, id).getContribution() / 100);
+            } else if (session.get(Book.class, id).getLevel() == "四级"
+                    && (session.get(Book.class, id).getLanguage() != "外文"
+                    || session.get(Book.class, id).getLanguage() != "少数名族文字图书"
+                    || session.get(Book.class, id).getLanguage() != "拼音图书")
+                    && (session.get(PBook.class, id).getWRole() == "编著、译著")) {
+                sumart += (session.get(PBook.class, id).getCount() * 3.5 * 0.5 * 1) * (session.get(PBook.class, id).getContribution() / 100);
+            } else if (session.get(Book.class, id).getLevel() == "四级"
+                    && (session.get(Book.class, id).getLanguage() != "外文"
+                    || session.get(Book.class, id).getLanguage() != "少数名族文字图书"
+                    || session.get(Book.class, id).getLanguage() != "拼音图书")
+                    && (session.get(PBook.class, id).getWRole() == "编")) {
+                sumart += (session.get(PBook.class, id).getCount() * 1.5 * 0.5 * 1) * (session.get(PBook.class, id).getContribution() / 100);
+            }
+            //项目结项（评价没有）
+            if (session.get(DProject.class, id).getApplyObject() == "国家"
+                    && session.get(DProject.class, id).getEvaluate() == "合格") {
+                if (session.get(DProject.class, id).getMoney1() >= 10)
+                    sumart += 20 + 3;
+                sumart += 20;
+            } else if (session.get(DProject.class, id).getApplyObject() == "国家"
+                    && session.get(DProject.class, id).getEvaluate() == "良好") {
+                if (session.get(DProject.class, id).getMoney1() >= 10)
+                    sumart += 50 + 3;
+                sumart += 50;
+            } else if (session.get(DProject.class, id).getApplyObject() == "国家"
+                    && session.get(DProject.class, id).getEvaluate() == "优秀") {
+                if (session.get(DProject.class, id).getMoney1() >= 10)
+                    sumart += 120 + 3;
+                sumart += 120;
+            }
+            if (session.get(DProject.class, id).getApplyObject() == "省部"
+                    && session.get(DProject.class, id).getEvaluate() == "合格") {
+                if (session.get(DProject.class, id).getMoney1() >= 10)
+                    sumart += 50 + 3;
+                sumart += 5;
+            } else if (session.get(DProject.class, id).getApplyObject() == "省部"
+                    && session.get(DProject.class, id).getEvaluate() == "良好") {
+                if (session.get(DProject.class, id).getMoney1() >= 10)
+                    sumart += 20 + 3;
+                sumart += 20;
+            } else if (session.get(DProject.class, id).getApplyObject() == "省部"
+                    && session.get(DProject.class, id).getEvaluate() == "优秀") {
+                if (session.get(DProject.class, id).getMoney1() >= 10)
+                    sumart += 50 + 3;
+                sumart += 50;
+            }
+            if (session.get(DProject.class, id).getApplyObject() == "市厅"
+                    && session.get(DProject.class, id).getEvaluate() == "合格") {
+                if (session.get(DProject.class, id).getMoney1() >= 10)
+                    sumart += 3 + 3;
+                sumart += 3;
+            } else if (session.get(DProject.class, id).getApplyObject() == "市厅"
+                    && session.get(DProject.class, id).getEvaluate() == "良好") {
+                if (session.get(DProject.class, id).getMoney1() >= 10)
+                    sumart += 0 + 3;
+                sumart += 0;
+            } else if (session.get(DProject.class, id).getApplyObject() == "市厅"
+                    && session.get(DProject.class, id).getEvaluate() == "优秀") {
+                if (session.get(DProject.class, id).getMoney1() >= 10)
+                    sumart += 5 + 3;
+                sumart += 5;
+            }
+            //科研奖励
+
+
+        }
     }
 }

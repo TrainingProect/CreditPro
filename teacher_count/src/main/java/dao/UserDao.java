@@ -121,4 +121,5 @@ public interface UserDao {
                          String Job, String Unit, int Contribution);
 
     public void Count(String teacherId);  //计算绩点(未完成)
+    public void SCount(String name);
 }

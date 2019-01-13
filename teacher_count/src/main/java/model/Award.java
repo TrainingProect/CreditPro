@@ -19,7 +19,7 @@ public class Award {
     private String ProjectSource;  //项目来源
     private String Kind1;  //成果形式1
     private String Kind2;  //成果形式2
-    private String Award;  //奖励类别
+    private String Award;  //获奖类别
     private int AwardNumber;  //获奖人数
     private int CompleteNumber;  //总参加单位数
     private int UnitLevel;  //单位排名

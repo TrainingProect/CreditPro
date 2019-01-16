@@ -7,58 +7,114 @@
 </head>
 <body>
 <div id="app">
-    <h3>【基本信息】</h3>
+    <h3>【论文新增】</h3>
     <el-form ref="form" :model="form" label-width="80px">
-        <el-form-item label="标准名称" >
-            <el-input v-model="form.name"></el-input>
+        <el-form-item label="论文题目" >
+            <el-input v-model="form1.name"></el-input>
+        </el-form-item>
+        <el-form-item label="刊物类型">
+            <el-radio-group v-model="form.resource">
+                <el-radio label="中文普通期刊"></el-radio>
+                <el-radio label="中文核心期刊"></el-radio>
+                <el-radio label="CSSCI"></el-radio>
+                <el-radio label="外文期刊"></el-radio>
+                <el-radio label="会议论文"></el-radio>
+                <el-radio label="一般论文集"></el-radio>
+                <el-radio label="其他"></el-radio>
+            </el-radio-group>
+        </el-form-item>
+        <el-form-item label="发表/出版时间">
+            <el-col :span="11">
+                <el-date-picker type="date" placeholder="选择日期" v-model="form.date1" style="width: 50%;"></el-date-picker>
+            </el-col>
+
+        </el-form-item>
+        <el-form-item label="发表期刊/论文集名称" >
+            <el-input v-model="form2.name"></el-input>
+        </el-form-item>
+        </el-form-item>
+        <el-form-item label="收录转载">
+            <el-checkbox-group v-model="form.type">
+                <el-checkbox label="SCIE" name="type"></el-checkbox>
+                <el-checkbox label="EI" name="type"></el-checkbox>
+                <el-checkbox label="SSCI" name="type"></el-checkbox>
+                <el-checkbox label="ISIP" name="type"></el-checkbox>
+                <el-checkbox label="人大复印资料" name="type"></el-checkbox>
+                <el-checkbox label="新华文摘" name="type"></el-checkbox>
+                <el-checkbox label="中国社会科学文献" name="type"></el-checkbox>
+                <el-checkbox label="人民日报" name="type"></el-checkbox>
+                <el-checkbox label="光明日报" name="type"></el-checkbox>
+                <el-checkbox label="其他" name="type"></el-checkbox>
+            </el-checkbox-group>
         </el-form-item>
         <el-form-item label="所属单位">
             <el-select v-model="form.region" placeholder="请选择所属单位">
                 <el-option label="中原计算机学院" value="shanghai"></el-option>
                 <el-option label="中原彼得堡学院" value="beijing"></el-option>
             </el-select>
-
         </el-form-item>
-        <el-form-item label="标准类别">
+        <el-form-item label="学科门类">
+            <el-radio-group v-model="form.resource">
+                <el-radio label="科技类"></el-radio>
+                <el-radio label="社科类"></el-radio>
+            </el-radio-group>
+        </el-form-item>
+        <el-form-item label="一级学科">
             <el-select v-model="form1.region" placeholder="请选择">
                 <el-option label="中原计算机学院" value="shanghai"></el-option>
                 <el-option label="中原彼得堡学院" value="beijing"></el-option>
             </el-select>
         </el-form-item>
-        <el-form-item label="标准编号">
-            <el-input v-model="form1.name"></el-input>
+        <el-form-item label="项目来源">
+            <el-select v-model="form2.region" placeholder="请选择">
+                <el-option label="中原计算机学院" value="shanghai"></el-option>
+                <el-option label="中原彼得堡学院" value="beijing"></el-option>
+            </el-select>
         </el-form-item>
-        <el-form-item label="提交时间">
-            <el-col :span="11">
-                <el-date-picker type="date" placeholder="选择日期" v-model="form.date1" style="width: 50%;"></el-date-picker>
-            </el-col>
-
-        </el-form-item>
-            <el-form-item label="是否发布">
-                <el-radio-group v-model="form.resource">
-                    <el-radio label="是"></el-radio>
-                    <el-radio label="否"></el-radio>
-                </el-radio-group>
-            </el-form-item>
-        <el-form-item label="发布时间">
-            <el-col :span="11">
-                <el-date-picker type="date" placeholder="选择日期" v-model="form1.date1" style="width: 50%;"></el-date-picker>
-            </el-col>
-
-        </el-form-item>
-        <el-form-item label="发布部门">
-            <el-input v-model="form2.name"></el-input>
-        </el-form-item>
-        <el-form-item label="所属行业">
+        <el-form-item label="发表范围">
             <el-select v-model="form3.region" placeholder="请选择">
                 <el-option label="中原计算机学院" value="shanghai"></el-option>
                 <el-option label="中原彼得堡学院" value="beijing"></el-option>
             </el-select>
         </el-form-item>
-        <h3>【所有指定人信息】</h3>     <el-form-item>
-        <el-button type="primary" @click="onSubmit">添加完成人</el-button>
+        <el-form-item label="字数（万字）">
+            <el-input v-model="form3.name"></el-input>
+        </el-form-item>
+        <el-form-item label="学校署名">
+            <el-radio-group v-model="form.resource">
+                <el-radio label="第一单位"></el-radio>
+                <el-radio label="非第一单位"></el-radio>
+            </el-radio-group>
+        </el-form-item>
+        <el-form-item label="版面">
+            <el-radio-group v-model="form.resource">
+                <el-radio label="正刊"></el-radio>
+                <el-radio label="增刊"></el-radio>
+                <el-radio label="年刊"></el-radio>
+                <el-radio label="专刊"></el-radio>
+            </el-radio-group>
+        </el-form-item>
+        <el-form-item label="是否为译文">
+            <el-radio-group v-model="form.resource">
+                <el-radio label="是"></el-radio>
+                <el-radio label="否"></el-radio>
 
-    </el-form-item>
+            </el-radio-group>
+        </el-form-item>
+
+        </el-form-item>
+
+
+        </el-form-item>
+        <el-form-item label="CN/ISSN号">
+            <el-input v-model="form4.name"></el-input>
+        </el-form-item>
+
+        <h3>【作者信息】</h3>
+        <el-form-item>
+            <el-button type="primary" @click="onSubmit">添加完成人</el-button>
+
+        </el-form-item>
         <template>
             <el-table
                     :data="tableData"
@@ -186,7 +242,16 @@
                     resource: '',
                     desc: ''
                 },
-                tableData: [{
+                form4: {
+                    name: '',
+                    region: '',
+                    date1: '',
+                    date2: '',
+                    delivery: false,
+                    type: [],
+                    resource: '',
+                    desc: ''
+                },  tableData: [{
                     date: '1',
                     name: '王小虎',
                     province: '男',

@@ -9,8 +9,11 @@
 <div id="app">
     <h3>【基本信息】</h3>
     <el-form ref="form" :model="form" label-width="80px">
-        <el-form-item label="标准名称" >
+        <el-form-item label="著作权名称" >
             <el-input v-model="form.name"></el-input>
+        </el-form-item>
+        <el-form-item label="著作权编号">
+            <el-input v-model="form1.name"></el-input>
         </el-form-item>
         <el-form-item label="所属单位">
             <el-select v-model="form.region" placeholder="请选择所属单位">
@@ -19,46 +22,40 @@
             </el-select>
 
         </el-form-item>
-        <el-form-item label="标准类别">
-            <el-select v-model="form1.region" placeholder="请选择">
-                <el-option label="中原计算机学院" value="shanghai"></el-option>
-                <el-option label="中原彼得堡学院" value="beijing"></el-option>
-            </el-select>
+        <el-form-item label="登记号">
+            <el-input v-model="form2.name"></el-input>
         </el-form-item>
-        <el-form-item label="标准编号">
-            <el-input v-model="form1.name"></el-input>
+        <el-form-item label="著作权类型">
+            <el-radio-group v-model="form.resource">
+                <el-radio label="音像制作"></el-radio>
+                <el-radio label="软件制作"></el-radio>
+                <el-radio label="其他"></el-radio>
+            </el-radio-group>
         </el-form-item>
-        <el-form-item label="提交时间">
+        <el-form-item label="出版日期">
             <el-col :span="11">
                 <el-date-picker type="date" placeholder="选择日期" v-model="form.date1" style="width: 50%;"></el-date-picker>
             </el-col>
 
         </el-form-item>
-            <el-form-item label="是否发布">
-                <el-radio-group v-model="form.resource">
-                    <el-radio label="是"></el-radio>
-                    <el-radio label="否"></el-radio>
-                </el-radio-group>
-            </el-form-item>
-        <el-form-item label="发布时间">
-            <el-col :span="11">
-                <el-date-picker type="date" placeholder="选择日期" v-model="form1.date1" style="width: 50%;"></el-date-picker>
-            </el-col>
-
+        <el-form-item label="学科门类">
+            <el-radio-group v-model="form1.resource">
+                <el-radio label="科技类"></el-radio>
+                <el-radio label="社科类"></el-radio>
+            </el-radio-group>
         </el-form-item>
-        <el-form-item label="发布部门">
-            <el-input v-model="form2.name"></el-input>
-        </el-form-item>
-        <el-form-item label="所属行业">
-            <el-select v-model="form3.region" placeholder="请选择">
+        <el-form-item label="一级学科">
+            <el-select v-model="form1.region" placeholder="请选择">
                 <el-option label="中原计算机学院" value="shanghai"></el-option>
                 <el-option label="中原彼得堡学院" value="beijing"></el-option>
             </el-select>
         </el-form-item>
-        <h3>【所有指定人信息】</h3>     <el-form-item>
-        <el-button type="primary" @click="onSubmit">添加完成人</el-button>
 
-    </el-form-item>
+        <h3>【作者信息】</h3>
+        <el-form-item>
+            <el-button type="primary" @click="onSubmit">添加完成人</el-button>
+
+        </el-form-item>
         <template>
             <el-table
                     :data="tableData"
@@ -166,6 +163,7 @@
                     resource: '',
                     desc: ''
                 },
+
                 form2: {
                     name: '',
                     region: '',

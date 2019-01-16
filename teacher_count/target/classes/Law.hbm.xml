@@ -6,12 +6,12 @@
     <!-- 建立类与表的映射 -->
     <class name="model.Law" table="law">
         <!-- 建立类中的属性与表中的主键对应 -->
-        <id name="teacherId" column="teacherId" >
+        <id name="Registration" column="Registration" >
             <generator class="assigned"/>
         </id>
 
         <!-- 建立类中的普通的属性和表的字段的对应 -->
-        <property name="Registration"/>
+        <property name="teacherId"/>
         <property name="ID"/>
         <property name="STime"/>
         <property name="Name"/>

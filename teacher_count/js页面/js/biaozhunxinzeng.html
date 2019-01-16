@@ -26,7 +26,7 @@
             </el-select>
         </el-form-item>
         <el-form-item label="标准编号">
-            <el-input v-model="form1.name"></el-input>
+            <el-input v-model="form.name"></el-input>
         </el-form-item>
         <el-form-item label="提交时间">
             <el-col :span="11">
@@ -42,12 +42,12 @@
             </el-form-item>
         <el-form-item label="发布时间">
             <el-col :span="11">
-                <el-date-picker type="date" placeholder="选择日期" v-model="form1.date1" style="width: 50%;"></el-date-picker>
+                <el-date-picker type="date" placeholder="选择日期" v-model="form.date1" style="width: 50%;"></el-date-picker>
             </el-col>
 
         </el-form-item>
         <el-form-item label="发布部门">
-            <el-input v-model="form2.name"></el-input>
+            <el-input v-model="form.name"></el-input>
         </el-form-item>
         <el-form-item label="所属行业">
             <el-select v-model="form3.region" placeholder="请选择">
@@ -55,10 +55,7 @@
                 <el-option label="中原彼得堡学院" value="beijing"></el-option>
             </el-select>
         </el-form-item>
-        <h3>【所有指定人信息】</h3>     <el-form-item>
-        <el-button type="primary" @click="onSubmit">添加完成人</el-button>
-
-    </el-form-item>
+        <h3>【所有指定人信息】</h3>
         <template>
             <el-table
                     :data="tableData"
@@ -96,7 +93,7 @@
                         width="120">
                 </el-table-column>
                 <el-table-column
-                        prop="power"
+                        prop="zip"
                         label="贡献率（%）"
                         width="120">
                 </el-table-column>
@@ -106,7 +103,7 @@
                         width="100">
                     <template slot-scope="scope">
                         <el-button @click="handleClick(scope.row)" type="text" size="small">删除</el-button>
-
+                        <el-button type="text" size="small">清空</el-button>
                     </template>
                 </el-table-column>
             </el-table>
@@ -166,16 +163,6 @@
                     resource: '',
                     desc: ''
                 },
-                form2: {
-                    name: '',
-                    region: '',
-                    date1: '',
-                    date2: '',
-                    delivery: false,
-                    type: [],
-                    resource: '',
-                    desc: ''
-                },
                 form3: {
                     name: '',
                     region: '',
@@ -187,21 +174,33 @@
                     desc: ''
                 },
                 tableData: [{
-                    date: '1',
+                    date: '2016-05-03',
                     name: '王小虎',
-                    province: '男',
-                    city: '本科',
+                    province: '上海',
+                    city: '普陀区',
                     address: '上海市普陀区金沙江路 1518 弄',
-                    zip: '教授',
-                    power:'10%'
-                },  {
-                    date: '2',
-                    name: '王乐乐',
-                    province: '女',
-                    city: '硕士研究生',
+                    zip: 200333
+                }, {
+                    date: '2016-05-02',
+                    name: '王小虎',
+                    province: '上海',
+                    city: '普陀区',
                     address: '上海市普陀区金沙江路 1518 弄',
-                    zip: '院士',
-                    power:'12%'
+                    zip: 200333
+                }, {
+                    date: '2016-05-04',
+                    name: '王小虎',
+                    province: '上海',
+                    city: '普陀区',
+                    address: '上海市普陀区金沙江路 1518 弄',
+                    zip: 200333
+                }, {
+                    date: '2016-05-01',
+                    name: '王小虎',
+                    province: '上海',
+                    city: '普陀区',
+                    address: '上海市普陀区金沙江路 1518 弄',
+                    zip: 200333
                 }],
                 data() {
                     return {

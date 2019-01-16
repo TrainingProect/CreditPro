@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- import CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+</head>
+<body>
+<div id="app">
+    <h3>【项目审核】</h3>
+    <template>
+        <el-table
+                ref="multipleTable"
+                :data="tableData3"
+                tooltip-effect="dark"
+                style="width: 100%"
+                @selection-change="handleSelectionChange">
+            <el-table-column
+                    type="selection"
+                    width="55">
+            </el-table-column>
+            <el-table-column
+                    label="成果名称"
+                    width="400">
+                <template slot-scope="scope">{{ scope.row.date }}</template>
+            </el-table-column>
+            <el-table-column
+                    prop="name"
+                    label="成果类型"
+                    width="220">
+            </el-table-column>
+            <el-table-column
+                    prop="name1"
+                    label="成果成员"
+                    width="220">
+            </el-table-column>
+            <el-table-column
+                    prop="name2"
+                    label="完成日期"
+                    width="220">
+            </el-table-column>
+            <el-table-column
+                    prop="name3"
+                    label="审核状态"
+                    width="220">
+            </el-table-column>
+
+        </el-table>
+
+    </template>
+    <el-row>
+        <h3>     </h3>
+        <el-button type="primary">审核通过</el-button>
+    </el-row>
+    <el-row>
+        <h3>     </h3>
+        <el-button type="primary">审核失败</el-button>
+    </el-row>
+    <el-row>
+        <h3>     </h3>
+        <el-button type="primary">删除请求</el-button>
+    </el-row>
+</div>
+</body>
+<!-- import Vue before Element -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!-- import JavaScript -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+
+        data() {
+            return {
+                form: {
+                    name: '',
+                    region: '',
+                    date1: '',
+                    date2: '',
+                    delivery: false,
+                    type: [],
+                    resource: '',
+                    desc: ''
+                },
+
+                tableData3: [{
+                    date: '面向电子档案',
+                    name: '项目结题',
+                    name1: '庞棣，刘怡策',
+                    name2: '2018-11-11',
+                    name3: '机构通过 '
+
+                }, {
+                    date: '盘鼓队演出',
+                    name: '艺术申请',
+                    name1: '王海，史谨',
+                    name2: '2018-11-11',
+                    name3: '机构未通过 '
+                }, {
+                    date: '国家纺织大赛',
+                    name: '获奖申请',
+                    name1: '王乐',
+                    name2: '2018-11-11',
+                    name3: '申请中 '
+                }, {
+                    date: '艺术团慰问演出',
+                    name: '艺术申报',
+                    name1: '庞棣',
+                    name2: '2018-11-11',
+                    name3: '机构通过 '
+                }],
+
+                data() {
+                    return {
+                        fileList: [{name: 'food.jpeg', url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'}, {name: 'food2.jpeg', url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'}]
+                    };
+                }
+            }
+        },
+        methods: {
+            onSubmit() {
+                console.log('submit!');
+            },
+
+        }
+    })
+
+</script>
+</html>

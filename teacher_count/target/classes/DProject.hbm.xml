@@ -6,12 +6,12 @@
     <!-- 建立类与表的映射 -->
     <class name="model.DProject" table="dproject">
         <!-- 建立类中的属性与表中的主键对应 -->
-        <id name="teacherId" column="teacherId" >
+        <id name="ID" column="ID" >
             <generator class="assigned"/>
         </id>
 
         <!-- 建立类中的普通的属性和表的字段的对应 -->
-        <property name="ID"/>
+        <property name="teacherId"/>
         <property name="Unit"/>
         <property name="ResultName"/>
         <property name="ProjectUnit"/>

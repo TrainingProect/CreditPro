@@ -6,18 +6,18 @@
     <!-- 建立类与表的映射 -->
     <class name="model.PArt" table="part">
         <!-- 建立类中的属性与表中的主键对应 -->
-        <id name="teacherId" column="teacherId" >
+        <id name="ID" column="ID" >
             <generator class="assigned"/>
         </id>
 
         <!-- 建立类中的普通的属性和表的字段的对应 -->
+        <property name="teacherId" column="teacherId"/>
         <property name="Name" column="name" />
-        <property name="ID" column="ID"/>
         <property name="Sex" column="Sex"/>
-        <property name="Contribution" column="Contribution"/>
         <property name="Kind" column="Kind"/>
         <property name="Education" column="Education"/>
         <property name="Job" column="Job"/>
         <property name="Unit" column="Unit"/>
+        <property name="Contribution" column="Contribution"/>
     </class>
 </hibernate-mapping>
